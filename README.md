@@ -24,11 +24,11 @@ En este curso vemos sintaxis básica para trabajar con R.
 
 Consideré como las más relevantes rescatar la asignación de variables
 
-nombreVariable <- función o dato a asignar
+>nombreVariable <- función o dato a asignar
 
 Y la concatenación:
 
-c(x,y, ..., z)
+>c(x,y, ..., z)
 
 #### Clase 2: 9 de Febrero del 2024
 
