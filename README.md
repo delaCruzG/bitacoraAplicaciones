@@ -1,6 +1,6 @@
 # Bitacora de uso de R para aplicaciones estadísticas
 
-#  Héctor García de la Cruz
+###  Héctor García de la Cruz
 
 ## Semana 1. Clase 1: 2 de Febrero del 2024
 
