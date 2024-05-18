@@ -10,9 +10,11 @@ Para poder completar la actividad usamos los siguientes comandos:
 
 Para instalar el paquete swirl usamos el siguiente comando y swirl como argumento :
 
-"""
+'''
+
 install.packages("nombre_paquete")
-"""
+
+'''
 
 Para activar el paquete debemos usar. En este caso con swirl como argumento.
 
