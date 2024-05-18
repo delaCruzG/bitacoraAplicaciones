@@ -445,4 +445,185 @@ expenditureyear10_norm <- rnorm(200,mean=mean(expenditureyear10, na.rm=TRUE), sd
 
 boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2), names = c("expenditureyear0", "expenditureyear10"), las = 2, col = c("orange","red"), border = "brown", horizontal = TRUE)
 
+#### 15 de abril #Cargar resultados crudos de una prueba de opción múltiple
+score <- read.csv("http://lang-tech.net/doc/sample.score.csv", header = TRUE, sep = ",")
+View(score)
+
+#Cargar la clave de respuestas (si te sale un warning es normal)
+key <- read.csv("http://lang-tech.net/doc/sample.key.csv", header = TRUE, sep =",")
+
+#Instala el paquete CTT
+install.packages("CTT")
+library(CTT)
+
+# Calificar prueba
+myScore <- score(score, key, output.scored=TRUE)
+
+#Ve qué hay en myScore
+View(myScore)
+
+# ¿Cuántas pruebas vamos a calificar?
+length(myScore$score)
+
+#Saca el promedio y mediana usando una sola función (myScore$score)
+
+#Puntajes alternativos
+
+#Sacar percentiles
+percentil<-score.transform(myScore$score,mu.new=9.44,sd.new=3, normalize=TRUE)
+View(percentil) 
+
+#Multiplica los p.scores por 100 para obtener el percentil en porcentaje
+percentil<-percentil$p.scores*100
+
+#¿Cuántos decimales tienen tus valores del percentil?
+View(percentil)
+
+#Redondea a 2 decimales
+percentil<-round(percentil2,digits=2)
+
+#Z-score
+zscore <- scale(rowSums(myScore$scored), center = TRUE, scale = TRUE)
+
+#T-scores: ¿Recuerdas la fórmula para sacarlo a partir del t-score? Cálculalos.
+
+#Estaninas- (la fórmula más difícil de hoy)
+stanine.scale <- vector("numeric")
+i <- 1
+for (i in 1:length(myScore$score)){
+  stanine.scale[i] <- round(1.96*zscore[i]+5, 0)
+  if (stanine.scale[i] <= 0){
+    stanine.scale[i] <- 1}
+  if (stanine.scale[i] >= 10){
+    stanine.scale[i] <- 9
+  }
+  
+#Crea una variable con los puntajes totales
+puntaje<-rowSums(myScore$scored)
+  
+#Crea una tabla con los puntajes totales.
+tabla<-table(puntaje)
+  
+#Añade a la tabla las otras formas en que se pueden reportar puntajes
+tabla<-cbind(puntaje, percentil, zscore, tscore, Estaninas=stanine.scale)
+  
+#Ve el resultado
+View(tabla)
+  
+#¿Te gustan los nombres de las columnas? Cámbialos. 
+colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
+  
+
+#### 29 de abril: Análisis de Reactivos
+
+#### 29 de abril Análisis de Reactivos II
+
+
+Escalas de Likert y retroalimentación de experiencia
+
+Tras responder una prueba de comprensión auditiva, se les hizo una serie de preguntas a las personas:		
+
+¿Qué tan familiares te resultaron los temas de las preguntas? 
+		 	 	 								
+2. ¿Qué tan interesantes te resultaron los audios?
+					
+3. ¿Que tan difíciles te parecieron los audios?	
+					
+4. ¿Qué tan bien crees que la prueba refleje tus habilidades de comprensión auditiva?
+
+Las respuestas se respondieron usando una escala de Likert del 1 al 4 donde 1 significa “nada”  y 4 significa “extremadamente” 
+
+#Cargar los datos
+Likdat<-read.csv(file.choose())
+
+#Revisar que se cargaron bien los datos y ver qué contiene la tabla. 
+> View(Likdat)
+> str(Likdat)
+
+#Quita la primer columna (id)
+Likdat_sub<-Likdat[,c(-1)]
+
+#Análisis de respuestas
+>library(CTT)
+>ItanL   <- itemAnalysis(Likdat_sub)
+> ItanL
+
+#Recuerda: si quieres un análisis más completo necesitas usar str()
+>str(ItanL)
+
+#Vamos a ver sólo la parte de item report
+>ItanL$itemReport
+
+Aunque nos da información útil, sirve también ver la frecuencia de cada respuesta para cada pregunta. 
+
+>install.packages("questionr")
+>library(questionr)
+
+#Ver la frecuencia de respuestas en una pregunta
+> questionr::freq(Likdat$q1)
+
+#Para sacar las frecuencias de las 4 preguntas al mismo tiempo usa una de las siguientes funciones:
+Opción 1
+> apply(Likdat_sub,2,questionr::freq)
+
+#Opción 2 (si no creaste el subconjunto de respuestas)
+> apply(Likdat[,c(2:5)],2,questionr::freq)
+
+#Vamos a graficar la frecuencia de la pregunta 1 
+> barplot(table(Likdat$q1))
+
+#Repite con las otras 3 preguntas. 
+Mejora la apariencia de las gráficas y pégalas en un documento. 
+
+
+Cómo analizar reactivos politómicos
+Por ejemplo, si al evaluar un ensayo hay 4 rubros o aspectos. 
+
+>polydat<-read.csv(file.choose())
+> View(polydat)
+
+#Hacemos una variable que nos combine todos los puntajes de cada rubro
+> polys   <- c("poly1", "poly2", "poly3", "poly4")
+
+#Analizamos los rubros
+> itanp   <- itemAnalysis(polydat[,polys])
+>str(itanp)
+
+#Aislamos el item report
+> itanp$itemReport
+
+#Aunque podemos ver el promedio para cada uno de los rubros, queremos ver la dificultad también. 
+
+> PolyAnReport   <- itanp$itemReport
+> PolyAnReport$item_p <- PolyAnReport$itemMean/itanp$nItem
+> PolyAnReport
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		
+
+				
+			
+		
+
+				
+			
+		
+
+
+				
+			
+		
+
 
