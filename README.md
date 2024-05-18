@@ -2,7 +2,7 @@
 
 #  Héctor García de la Cruz
 
-## Clase 1: 2 de Febrero del 2024
+## Semana 1. Clase 1: 2 de Febrero del 2024
 
 En esta clase instalamos R y R estudio. 
 
@@ -40,7 +40,7 @@ Y la concatenación:
 c(x,y, ..., z)
 ```
 
-#### Clase 2: 9 de Febrero del 2024
+#### Semana 2. Clase 2: 9 de Febrero del 2024
 
 En esta clase se estudiaron varios conceptos relevantes para trabajar con datos y dataframes.
 
@@ -91,7 +91,7 @@ En el caso de class:
 class(dataframe$columna)
 ```
 
-#### Ahora bien, para aterrizar el uso de R en el análisis cualitativo vale la pena mencionar que un factor puede representarse en R como un vector.
+_ Ahora bien, para aterrizar el uso de R en el análisis cualitativo vale la pena mencionar que un factor puede representarse en R como un vector. _
 
 Recordar que los factores son variables categóricas estrictamente no númericas.
 
@@ -196,7 +196,7 @@ Para obtener el resultado del tipo de dato para cada columna debemos usar
 
 >sapply(<varDF>, <función_a_repetir>)
 
-### Clase 3: 16 de Febrero
+### Semana 3. Clase 3: 16 de Febrero
 
 
 //Aún pendiente de detalles:
@@ -226,7 +226,7 @@ Dibujar línea de tendencia en rojo
 abline(lm( total_ex1~total_ex2),col="red")
 
 
-### Clase 4: 26 de Febrero
+### Semana 5. Clase 4: 26 de Febrero
 
 //Pendiente de explicación:
 
@@ -341,15 +341,18 @@ abline(lm( total_ex1~total_ex2),col="red")
 >sapply(banana, class)
 >print(banana$Gender)
 
-## Clase 5 4 de Marzo del 2024
+## Semana 6. Clase 5 4 de Marzo del 2024
 
 
-## Clase 6 14 de Marzo del 2024
+
+## Semana 7. Clase 6 11 de Marzo del 2024
 
 
-## Clase 7 21 de Marzo del 2024
+## Semana 8. No hubo Clase.
 
-## Clase 8 1 de Abril del 2024
+Clase 7 21 de Marzo del 2024
+
+## Semana 9. Clase 8 1 de Abril del 2024
 En esta clase nos encargamos de aplicar la teoría de sesgo y curtósis:
 
 
@@ -514,9 +517,11 @@ View(tabla)
 colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
   
 
-#### 29 de abril: Análisis de Reactivos
+#### Clase 9 22 de abril: Análisis de Reactivos
 
-#### 29 de abril Análisis de Reactivos II
+
+
+#### Clase 10 29 de abril Análisis de Reactivos II
 
 
 Escalas de Likert y retroalimentación de experiencia
@@ -597,33 +602,3 @@ Por ejemplo, si al evaluar un ensayo hay 4 rubros o aspectos.
 > PolyAnReport   <- itanp$itemReport
 > PolyAnReport$item_p <- PolyAnReport$itemMean/itanp$nItem
 > PolyAnReport
-
-
-
-
-
-
-
-
-
-
-
-
-
-			
-		
-
-				
-			
-		
-
-				
-			
-		
-
-
-				
-			
-		
-
-
