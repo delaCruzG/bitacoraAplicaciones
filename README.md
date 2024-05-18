@@ -91,7 +91,7 @@ En el caso de class:
 class(dataframe$columna)
 ```
 
-Ahora bien, para aterrizar el uso de R en el análisis cualitativo vale la pena mencionar que un factor puede representarse en R como un vector.*
+_Ahora bien, para aterrizar el uso de R en el análisis cualitativo vale la pena mencionar que un factor puede representarse en R como un vector_
 
 Recordar que los factores son variables categóricas estrictamente no númericas.
 
