@@ -40,7 +40,7 @@ Y la concatenación:
 c(x,y, ..., z)
 ```
 
-#### Semana 2. Clase 2: 9 de Febrero del 2024
+## Semana 2. Clase 2: 9 de Febrero del 2024
 
 En esta clase se estudiaron varios conceptos relevantes para trabajar con datos y dataframes.
 
@@ -196,7 +196,7 @@ Para obtener el resultado del tipo de dato para cada columna debemos usar
 
 >sapply(<varDF>, <función_a_repetir>)
 
-### Semana 3. Clase 3: 16 de Febrero
+## Semana 3. Clase 3: 16 de Febrero
 
 
 //Aún pendiente de detalles:
@@ -226,7 +226,7 @@ Dibujar línea de tendencia en rojo
 abline(lm( total_ex1~total_ex2),col="red")
 
 
-### Semana 5. Clase 4: 26 de Febrero
+## Semana 5. Clase 4: 26 de Febrero
 
 //Pendiente de explicación:
 
@@ -515,13 +515,15 @@ View(tabla)
   
 #¿Te gustan los nombres de las columnas? Cámbialos. 
 colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
-  
 
-#### Clase 9 22 de abril: Análisis de Reactivos
-
+## Semana 10. Clase 9 1 de Abril del 2024
 
 
-#### Clase 10 29 de abril Análisis de Reactivos II
+## Semana 12. Clase 9 22 de abril: Análisis de Reactivos
+
+
+
+## Semana 13. Clase 10 29 de abril Análisis de Reactivos II
 
 
 Escalas de Likert y retroalimentación de experiencia
