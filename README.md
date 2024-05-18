@@ -1,8 +1,8 @@
 # Bitacora de uso de R para aplicaciones estadísticas
 
-### Héctor García de la Cruz
+#  Héctor García de la Cruz
 
-#### Clase 1: 2 de Febrero del 2024
+## Clase 1: 2 de Febrero del 2024
 
 En esta clase instalamos R y R estudio. 
 
@@ -16,21 +16,29 @@ install.packages("nombre_paquete")
 
 Para activar el paquete debemos usar. En este caso con swirl como argumento.
 
->library()
+```
+library()
+```
 
 Finalmente, para empezar la guía ofrecida para este caso en particular debemos de usar
 
->swirl()
+```
+swirl()
+```
 
 En este curso vemos sintaxis básica para trabajar con R.
 
 Consideré como las más relevantes rescatar la asignación de variables
 
->nombreVariable <- función o dato a asignar
+```
+nombreVariable <- función o dato a asignar
+```
 
 Y la concatenación:
 
->c(x,y, ..., z)
+```
+c(x,y, ..., z)
+```
 
 #### Clase 2: 9 de Febrero del 2024
 
@@ -38,36 +46,50 @@ En esta clase se estudiaron varios conceptos relevantes para trabajar con datos 
 
 Para consultar el tipo de dato al que pertenece nuestra variable a nivel programación usamos la función:
 
->class()
+```
+class()
+```
 
 Ejemplo de uso:
 
->class(nombreVariableAquí)
+```
+class(nombreVariableAquí)
+```
 
 En relación a los números enteros, podemos usar la función as.integer para redondearlos:
 
->as.integer(2.2)
+```
+as.integer(2.2)
+```
 
 Si queremos leer un csv, R nos brinda la función read.csv()
 
 Como argumento para esta función a la vez usaremos la funcióñ file.choose() y marcaremos el parametro header=TRUE.
 
->read.csv(file.choose(), header=TRUE)
+```
+read.csv(file.choose(), header=TRUE)
+```
 
 Cuando leemos un csv de esta manera, podemos usarlo dentro del lenguaje R como un dataframe.
 
 Para consultar una columna de nuestro dataframe podemos asignar la lectura de un csv a una variable y posteriormente especificar la columna que nos interesa consultar usando el signo de"$":
 
 Primer paso:
->dataframe <- read.csv(file.choose(), header=TRUE)
+```
+dataframe <- read.csv(file.choose(), header=TRUE)
+```
 
 Segundo paso (usar $ para delimitar argumento):
 
->print(dataframe$columna)
+```
+print(dataframe$columna)
+```
 
 En el caso de class:
 
->class(dataframe$columna)
+```
+class(dataframe$columna)
+```
 
 #### Ahora bien, para aterrizar el uso de R en el análisis cualitativo vale la pena mencionar que un factor puede representarse en R como un vector.
 
@@ -75,27 +97,44 @@ Recordar que los factores son variables categóricas estrictamente no númericas
 
 Recordatorio, un vector se declara de la siguiente forma:
 
->factor(c(v1, v2, ..., v3))
+```
+factor(c(v1, v2, ..., v3))
+```
 
 Algunas funciones útiles para analizar una variable a la que se asignaron factores son:
 
 Los diferentes factores con los que contamos
->levels()
+```
+levels()
+```
 
 El numero de factores 
->nlevels()
+
+```
+nlevels()
+```
 
 Esta función también se puede usar para analizar nuestros factores
->class()
+```
+class()
+```
 
 Finalmente, podemos usar levels dentro de class para saber el tipo de datos que tienen las diferentes categoríás de un factor.
->class(levels())
+```
+class(levels())
+```
 
 Si creamos vectores podemos consultar cuántos elementos tiene mediante:
->length()
+
+```
+length()
+```
 
 Ahora bien, si queremos ver nuestro dataframe tenemos que usar la función View
->View()
+
+```
+View()
+```
 
 Poner atención a la mayuscula.
 
@@ -104,29 +143,46 @@ Entre los comandos útiles para trabajar con dataframes tenemos:
 
 1. Para trabajar con filas
 Número de filas
->nrow()
+
+```
+nrow()
+```
 
 Nombre de las filas
->rownames()
+```
+rownames()
+```
 
 2. Para trabajar con columnas
 Número de columnas
->ncol()
+
+```
+ncol()
+```
 
 Nombre de las columnas
->colnames()
+
+```
+colnames()
+```
 
 o bien
 
->names()
+```
+names()
+```
 
 Ejemplo de la sintáxis si queremos deliminar una fila o columna específica:
 
 1. Consultar nombre columna x
->colnames()[x]
+```
+colnames()[x]
+```
 
 2. Consultar nombre fila x
->rownames()[x]
+```
+rownames()[x]
+```
 
 Nota:
 La variable que guarda nuestro dataframe no puede usarse como argumento de class para saber los tipos de datos de sus columnas. Class nos da como output "data.frame"
