@@ -10,25 +10,25 @@ ________________________________________________________________________________
 
 La organización del contenido es como se presenta a continuación:
 
-[Semana 1. Clase 1: 2 de Febrero: Intro a R y R studio. Swirl.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024)
+[Semana 1. Clase 1. 2 de Febrero: Intro a R y R studio. Swirl.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024)
 
-[Semana 2. Clase 2: 9 de Febrero: Tipos de variables en R. Data frames.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-2-clase-2-9-de-febrero-del-2024)
+[Semana 2. Clase 2. 9 de Febrero: Tipos de variables en R. Data frames.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-2-clase-2-9-de-febrero-del-2024)
 
-[Semana 3. Clase 3: 16 de Febrero: Correlaciones y Gráficas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-3-clase-3-16-de-febrero)
+[Semana 3. Clase 3. 16 de Febrero: Correlaciones y Gráficas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-3-clase-3-16-de-febrero)
 
-[Semana 5. Clase 4: 26 de Febrero: Medidas de tendencia central e histogramas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-5-clase-4-26-de-febrero)
+[Semana 5. Clase 4. 26 de Febrero: Medidas de tendencia central e histogramas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-5-clase-4-26-de-febrero)
 
-[Semana 6. Clase 5 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-6-clase-5-4-de-marzo-del-2024-medidas-de-dispersi%C3%B3n)
+[Semana 6. Clase 5. 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-6-clase-5-4-de-marzo-del-2024-medidas-de-dispersi%C3%B3n)
 
-[Semana 7. Clase 6 11 de Marzo: Distribución de frecuencias en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-7-clase-6-11-de-marzo-del-2024)
+[Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-7-clase-6-11-de-marzo-del-2024)
 
-[Semana 9. Clase 9 1 de Abril: Histogramas, gráficos de caja y dotplots en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-9-clase-8-1-de-abril-del-2024)
+[Semana 9. Clase 9. 1 de Abril: Histogramas, gráficos de caja y dotplots en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-9-clase-8-1-de-abril-del-2024)
 
-[Semana 10. Clase 10 8 de Abril: Formas alternativas de reportar puntajes en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-10-clase-9-1-de-abril-del-2024-formas-alternativs-de-reportar-puntajes)
+[Semana 10. Clase 10. 8 de Abril: Formas alternativas de reportar puntajes en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-10-clase-9-1-de-abril-del-2024-formas-alternativs-de-reportar-puntajes)
 
-[Semana 12. Clase 12 22 de abril: Análisis de Reactivos](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-12-clase-9-22-de-abril-an%C3%A1lisis-de-reactivos)
+[Semana 12. Clase 12. 22 de abril: Análisis de Reactivos](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-12-clase-9-22-de-abril-an%C3%A1lisis-de-reactivos)
 
-[Semana 13. Clase 13 29 de abril: Análisis de Reactivos II](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-13-clase-10-29-de-abril-an%C3%A1lisis-de-reactivos-ii)
+[Semana 13. Clase 13. 29 de abril: Análisis de Reactivos II](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-13-clase-10-29-de-abril-an%C3%A1lisis-de-reactivos-ii)
 
 ___________________________________________________________________________________________
 
