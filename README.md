@@ -341,11 +341,162 @@ abline(lm( total_ex1~total_ex2),col="red")
 >sapply(banana, class)
 >print(banana$Gender)
 
-## Semana 6. Clase 5 4 de Marzo del 2024
+## Semana 6. Clase 5 4 de Marzo del 2024. Medidas de Dispersión.
+
+```
+> data("Pima.te")
+Warning message:
+In data("Pima.te") : data set ‘Pima.te’ not found
+> library(MASS)
+> data("Pima.te")
+> #Vemos el número de datos
+> nrow(Pima.te)
+[1] 332
+> 
+> View(Pima.te)
+> summary(Pima.te$glu)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   65.0    96.0   112.0   119.3   136.2   197.0 
+> 197-65
+[1] 132
+> var <- 197-65
+> range(Pima.te$glu)
+[1]  65 197
+> 
+> 
+> IQR(Pima.te$glu)
+[1] 40.25
+> var(Pima.te$glu)
+[1] 930.3194
+> sqrt(var(Pima.te$glu))
+[1] 30.50114
+> sqrt(var(Pima.te$glu))
+[1] 30.50114
+> sqrt(var(Pima.te$glu))
+[1] 30.50114
+> var(Pima.te$glu)
+[1] 930.3194
+> sqrt(var(Pima.te$glu))
+[1] 30.50114
+> sd(Pima.te$glu)
+[1] 30.50114
+> sapply(Pima.te, sd)
+Error in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm = na.rm) : 
+  Calling var(x) on a factor x is defunct.
+  Use something like 'all(duplicated(x)[-1L])' to test for a constant vector.
+> sapply(Pima.te, class)
+    npreg       glu        bp      skin       bmi       ped       age      type 
+"integer" "integer" "integer" "integer" "numeric" "numeric" "integer"  "factor" 
+> sapply(Pima.te[c('npreg', 'glu', 'age')], sd)
+    npreg       glu       age 
+ 3.283634 30.501138 10.636225 
+> #promedios
+> sapply(Pima.te[c('npreg', 'glu', 'age')], sd)
+    npreg       glu       age 
+ 3.283634 30.501138 10.636225 
+> #promedios
+> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
+    npreg       glu       age 
+  3.48494 119.25904  31.31627 
+> #promedios
+> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
+    npreg       glu       age 
+  3.48494 119.25904  31.31627 
+> #promedios
+> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
+    npreg       glu       age 
+  3.48494 119.25904  31.31627 
+> hist(Pima.te$glu)
+> abline(v=mean(Pima.te$glue), col="salmon", lwd=5)
+Warning message:
+In mean.default(Pima.te$glue) :
+  argument is not numeric or logical: returning NA
+> data(leuk)
+> force(leuk)
+      wbc      ag time
+1    2300 present   65
+2     750 present  156
+3    4300 present  100
+4    2600 present  134
+5    6000 present   16
+6   10500 present  108
+7   10000 present  121
+8   17000 present    4
+9    5400 present   39
+10   7000 present  143
+11   9400 present   56
+12  32000 present   26
+13  35000 present   22
+14 100000 present    1
+15 100000 present    1
+16  52000 present    5
+17 100000 present   65
+18   4400  absent   56
+19   3000  absent   65
+20   4000  absent   17
+21   1500  absent    7
+22   9000  absent   16
+23   5300  absent   22
+24  10000  absent    3
+25  19000  absent    4
+26  27000  absent    2
+27  28000  absent    3
+28  31000  absent    8
+29  26000  absent    4
+30  21000  absent    3
+31  79000  absent   30
+32 100000  absent    4
+33 100000  absent   43
+> View(leuk)
+> nrows(leuk)
+Error in nrows(leuk) : could not find function "nrows"
+> nrow(leuk)
+[1] 33
+> summary(leuk$time)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    4.00   22.00   40.88   65.00  156.00 
+> mvf(leuk$time)
+Error in mvf(leuk$time) : could not find function "mvf"
+> summary(leuk$time)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.00    4.00   22.00   40.88   65.00  156.00 
+> mvf(leuk$time)
+Error in mvf(leuk$time) : could not find function "mvf"
+> library(modeest)
+> mvf(leuk$time)
+Error in mvf(leuk$time) : could not find function "mvf"
+> mfv(leuk$time)
+[1] 4
+> var(Pima.te$glu)
+[1] 930.3194
+> range(leuk$time)
+[1]   1 156
+> var1 <- 197-65
+> IQR(leuk$time)
+[1] 61
+> range(leuk$wbc)
+[1]    750 100000
+> var1 <- 100000-750
+> IQR(leuk$wbc)
+[1] 26700
+> var1
+[1] 99250
+> var(leuk$wbc)
+[1] 1189517888
+> sqrt(var(leuk$wbc))
+[1] 34489.39
+> table(leuk$ag)
+
+ absent present 
+     16      17
+```
 
 
+## Semana 7. Clase 6 11 de Marzo del 2024.
 
-## Semana 7. Clase 6 11 de Marzo del 2024
+```
+
+```
 
 
 ## Semana 8. No hubo Clase.
@@ -516,12 +667,175 @@ View(tabla)
 #¿Te gustan los nombres de las columnas? Cámbialos. 
 colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
 
-## Semana 10. Clase 9 1 de Abril del 2024
+## Semana 10. Clase 9 1 de Abril del 2024. Formas alternativs de reportar puntajes.
+
+#Cargar resultados crudos de una prueba de opción múltiple
+score <- read.csv("http://lang-tech.net/doc/sample.score.csv", header = TRUE, sep = ",")
+View(score)
+
+#Cargar la clave de respuestas (si te sale un warning es normal)
+key <- read.csv("http://lang-tech.net/doc/sample.key.csv", header = TRUE, sep =",")
+
+#Instala el paquete CTT
+install.packages("CTT")
+library(CTT)
+
+# Calificar prueba
+myScore <- score(score, key, output.scored=TRUE)
+
+#Ve qué hay en myScore
+View(myScore)
+
+# ¿Cuántas pruebas vamos a calificar?
+length(myScore$score)
+
+#Saca el promedio y mediana usando una sola función (myScore$score)
+
+#Puntajes alternativos
+
+#Sacar percentiles
+percentil<-score.transform(myScore$score,mu.new=9.44,sd.new=3, normalize=TRUE)
+View(percentil) 
+
+#Multiplica los p.scores por 100 para obtener el percentil en porcentaje
+percentil<-percentil$p.scores*100
+
+#¿Cuántos decimales tienen tus valores del percentil?
+View(percentil)
+
+#Redondea a 2 decimales
+percentil<-round(percentil2,digits=2)
+
+#Z-score
+zscore <- scale(rowSums(myScore$scored), center = TRUE, scale = TRUE)
+
+#T-scores: ¿Recuerdas la fórmula para sacarlo a partir del t-score? Cálculalos.
+
+#Estaninas- (la fórmula más difícil de hoy)
+stanine.scale <- vector("numeric")
+i <- 1
+for (i in 1:length(myScore$score)){
+  stanine.scale[i] <- round(1.96*zscore[i]+5, 0)
+  if (stanine.scale[i] <= 0){
+    stanine.scale[i] <- 1}
+  if (stanine.scale[i] >= 10){
+    stanine.scale[i] <- 9
+  }
+  
+#Crea una variable con los puntajes totales
+puntaje<-rowSums(myScore$scored)
+  
+#Crea una tabla con los puntajes totales.
+tabla<-table(puntaje)
+  
+#Añade a la tabla las otras formas en que se pueden reportar puntajes
+tabla<-cbind(puntaje, percentil, zscore, tscore, Estaninas=stanine.scale)
+  
+#Ve el resultado
+View(tabla)
+  
+#¿Te gustan los nombres de las columnas? Cámbialos. 
+colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
+  
+
 
 
 ## Semana 12. Clase 9 22 de abril: Análisis de Reactivos
 
+Análisis de reactivos en R
+ 
+# 1. Carga tu base de datos con las respuestas
+Es buena idea no usar nombres muy largos de títulos en las columnas.
+ 
+dat <- read.csv(file.choose())
+ 
+SB-IA.csv
+ 
+View(dat)
+ 
+#  2. Definir ítems y respuestas
+Ojo: Tienen que coincidir en longitud y las comillas tienen que ser rectas.
+ 
+> items  <- c("i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10","i11","i12", "i13","i14")
+ 
+#Otra forma de hacer esto mismo sin escribir variable por variable es:
+items<- paste0("i", 1:14)
+(si lo hiciste con la función anterior, puedes intentar de nuevo después de introducir:
+ 
+rm(ítems)
 
+key	<- c("A", "J", "M", "Q", "C", "F", "N", "I", "E", "H", "L", "O", "G", "K") 
+ 
+#Instalar paquete CTT
+ 
+>install.packages("CTT")     
+>library("CTT")
+ 
+# 3.Calificar las respuestas
+ 
+Para poder consultar el resultado después, vamos a guardarlo en una variable
+ 
+>puntajes<-score(dat[,items], key, output.scored = TRUE, ID = dat$candno)
+ 
+>options(max.print = 10000)
+ 
+>puntajes
+ 
+#Si queremos aislar uno de estos 2 resultados, podemos usar el signo $, por ejemplo:
+>puntajes$score
+>puntajes$scored
+
+
+#Si queremos convertir estos puntajes a una tabla (data frame)
+>tabpuntajes <- as.data.frame(puntajes$scored)
+
+
+#Le podemos adjuntar el vector de las puntuaciones totales
+>tabpuntajes$tot <-puntajes$score
+>tabpuntajes
+
+
+#Vamos a guardarla como csv
+> write.csv(tabpuntajes,"PuntajesSB.csv")
+
+
+#Abre el CSV, verifica que esté correcto. Este es 1 de 2 archivos que tienes que subir a Classroom
+
+
+# 4. Análisis de ítems
+> analisis<-itemAnalysis(tabpuntajes[,items])
+> analisis
+  
+#Si queremos algo más extenso, podemos usar:
+ 
+>str(analisis)
+  
+ 
+# 5. Análisis de distractores
+CTT tiene una función para esto. Por default, necesita dividir los datos en 3 grupos por lo menos.
+ 
+ 
+>distractorAnalysis(dat[, items], key, nGroups=3, digits=2)
+ 
+ 
+#Anteriormente, habíamos visto que para obtener el índice de discriminación en grupos pequeños necesitábamos dividir por la mitad a un grupo pequeño o tomar en cuenta el 25% inferior y el 25% superior. Si quisiéramos obtener la proporción de respuestas correctas en estos últimos:
+ 
+AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2)
+ 
+>AnDist
+  
+# Si sólo se quieren analizar algunos reactivos, se puede indicar en la función como en el siguiente ejemplo:
+ 
+DistAn3 <- distractorAnalysis(dat[, items], key, defineGroups=c(.27, .46, .27), digits=2)[1:4]
+ 
+#En la misma función se puede indicar que nos los guarde como CSV:
+ 
+AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2,        	csvReport="reporte_distractores.csv")
+
+En este reporte de distractores, comenta al lado de cada reactivo cuáles reactivos/distractores crees que no sean buenos y necesitan cambiarse. Ten en cuenta que esta es una prueba de relacionar columnas, no de opción múltiple. 
+
+
+Sube tus 2 archivos a Classroom.
 
 ## Semana 13. Clase 10 29 de abril Análisis de Reactivos II
 
