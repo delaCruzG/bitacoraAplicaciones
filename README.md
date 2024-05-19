@@ -580,6 +580,11 @@ print(banana$Gender)
 
 ## Semana 6. Clase 5. 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
 
+
+
+## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
+
+
 ```
 data("Pima.te")
 ```
@@ -792,10 +797,6 @@ table(leuk$ag)
 
  absent present 
      16      17
-
-
-
-## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
 
  
 ## Semana 9. Clase 9. 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
