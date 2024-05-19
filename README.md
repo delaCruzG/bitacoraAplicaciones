@@ -744,93 +744,144 @@ colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
 
 Análisis de reactivos en R
  
-# 1. Carga tu base de datos con las respuestas
+1. Carga tu base de datos con las respuestas
 Es buena idea no usar nombres muy largos de títulos en las columnas.
  
+```
 dat <- read.csv(file.choose())
+```
  
-SB-IA.csv
- 
+```
 View(dat)
+```
  
-#  2. Definir ítems y respuestas
+2. Definir ítems y respuestas
 Ojo: Tienen que coincidir en longitud y las comillas tienen que ser rectas.
  
-> items  <- c("i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10","i11","i12", "i13","i14")
+ ```
+items  <- c("i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10","i11","i12", "i13","i14")
+```
  
 #Otra forma de hacer esto mismo sin escribir variable por variable es:
+```
 items<- paste0("i", 1:14)
+```
 (si lo hiciste con la función anterior, puedes intentar de nuevo después de introducir:
  
+```
 rm(ítems)
+```
 
+```
 key	<- c("A", "J", "M", "Q", "C", "F", "N", "I", "E", "H", "L", "O", "G", "K") 
+```
  
 #Instalar paquete CTT
  
->install.packages("CTT")     
->library("CTT")
+```
+install.packages("CTT")
+```
+```
+library("CTT")
+```
  
 # 3.Calificar las respuestas
  
 Para poder consultar el resultado después, vamos a guardarlo en una variable
  
->puntajes<-score(dat[,items], key, output.scored = TRUE, ID = dat$candno)
+```
+puntajes<-score(dat[,items], key, output.scored = TRUE, ID = dat$candno)
+```
  
->options(max.print = 10000)
+```
+options(max.print = 10000)
+```
  
->puntajes
- 
+'''r
+puntajes
+'''
+
+```{r}
+# execute code if the date is later than a specified day
+do_it = Sys.Date() > '2018-02-14'
+```
+
 #Si queremos aislar uno de estos 2 resultados, podemos usar el signo $, por ejemplo:
->puntajes$score
->puntajes$scored
+```{r}
+puntajes$score
+```
+```{r}
+puntajes$scored
+```
 
 
-#Si queremos convertir estos puntajes a una tabla (data frame)
->tabpuntajes <- as.data.frame(puntajes$scored)
+Si queremos convertir estos puntajes a una tabla (data frame)
 
+```
+tabpuntajes <- as.data.frame(puntajes$scored)
+```
 
 #Le podemos adjuntar el vector de las puntuaciones totales
->tabpuntajes$tot <-puntajes$score
->tabpuntajes
+```
+tabpuntajes$tot <-puntajes$score
+```
+```
+tabpuntajes
+```
 
 
 #Vamos a guardarla como csv
-> write.csv(tabpuntajes,"PuntajesSB.csv")
+```
+write.csv(tabpuntajes,"PuntajesSB.csv")
+```
 
 
 #Abre el CSV, verifica que esté correcto. Este es 1 de 2 archivos que tienes que subir a Classroom
 
 
 # 4. Análisis de ítems
-> analisis<-itemAnalysis(tabpuntajes[,items])
-> analisis
-  
+```
+analisis<-itemAnalysis(tabpuntajes[,items])
+```
+```
+analisis
+```
+
 #Si queremos algo más extenso, podemos usar:
  
->str(analisis)
+```
+str(analisis)
+```
   
  
-# 5. Análisis de distractores
+5. Análisis de distractores
 CTT tiene una función para esto. Por default, necesita dividir los datos en 3 grupos por lo menos.
  
  
->distractorAnalysis(dat[, items], key, nGroups=3, digits=2)
+```
+distractorAnalysis(dat[, items], key, nGroups=3, digits=2)
+```
  
  
 #Anteriormente, habíamos visto que para obtener el índice de discriminación en grupos pequeños necesitábamos dividir por la mitad a un grupo pequeño o tomar en cuenta el 25% inferior y el 25% superior. Si quisiéramos obtener la proporción de respuestas correctas en estos últimos:
- 
+
+```
 AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2)
- 
->AnDist
+``` 
+```
+AnDist
+```
   
-# Si sólo se quieren analizar algunos reactivos, se puede indicar en la función como en el siguiente ejemplo:
- 
+Si sólo se quieren analizar algunos reactivos, se puede indicar en la función como en el siguiente ejemplo:
+
+```
 DistAn3 <- distractorAnalysis(dat[, items], key, defineGroups=c(.27, .46, .27), digits=2)[1:4]
+``` 
+En la misma función se puede indicar que nos los guarde como CSV:
  
-#En la misma función se puede indicar que nos los guarde como CSV:
- 
+```
 AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2,        	csvReport="reporte_distractores.csv")
+```
 
 En este reporte de distractores, comenta al lado de cada reactivo cuáles reactivos/distractores crees que no sean buenos y necesitan cambiarse. Ten en cuenta que esta es una prueba de relacionar columnas, no de opción múltiple. 
 
@@ -854,67 +905,115 @@ Tras responder una prueba de comprensión auditiva, se les hizo una serie de pre
 
 Las respuestas se respondieron usando una escala de Likert del 1 al 4 donde 1 significa “nada”  y 4 significa “extremadamente” 
 
-#Cargar los datos
+Cargar los datos
+
+```
 Likdat<-read.csv(file.choose())
+```
 
 #Revisar que se cargaron bien los datos y ver qué contiene la tabla. 
-> View(Likdat)
-> str(Likdat)
+```
+View(Likdat)
+```
+```
+str(Likdat)
+```
 
 #Quita la primer columna (id)
+
+```
 Likdat_sub<-Likdat[,c(-1)]
+```
 
 #Análisis de respuestas
->library(CTT)
->ItanL   <- itemAnalysis(Likdat_sub)
-> ItanL
+```
+library(CTT)
+```
+```
+ItanL   <- itemAnalysis(Likdat_sub)
+```
+```
+ItanL
+```
 
-#Recuerda: si quieres un análisis más completo necesitas usar str()
->str(ItanL)
+Recuerda: si quieres un análisis más completo necesitas usar str()
+```
+str(ItanL)
+```
 
 #Vamos a ver sólo la parte de item report
->ItanL$itemReport
+
+```
+ItanL$itemReport
+```
 
 Aunque nos da información útil, sirve también ver la frecuencia de cada respuesta para cada pregunta. 
 
->install.packages("questionr")
->library(questionr)
+```
+install.packages("questionr")
+```
+```{r}
+library(questionr)
+```
 
-#Ver la frecuencia de respuestas en una pregunta
-> questionr::freq(Likdat$q1)
+Ver la frecuencia de respuestas en una pregunta
 
-#Para sacar las frecuencias de las 4 preguntas al mismo tiempo usa una de las siguientes funciones:
+```
+questionr::freq(Likdat$q1)
+```
+
+Para sacar las frecuencias de las 4 preguntas al mismo tiempo usa una de las siguientes funciones:
 Opción 1
-> apply(Likdat_sub,2,questionr::freq)
 
-#Opción 2 (si no creaste el subconjunto de respuestas)
-> apply(Likdat[,c(2:5)],2,questionr::freq)
+```
+apply(Likdat_sub,2,questionr::freq)
+```
 
-#Vamos a graficar la frecuencia de la pregunta 1 
-> barplot(table(Likdat$q1))
+Opción 2 (si no creaste el subconjunto de respuestas)
+```
+apply(Likdat[,c(2:5)],2,questionr::freq)
+```
 
-#Repite con las otras 3 preguntas. 
+Vamos a graficar la frecuencia de la pregunta 1 
+```
+barplot(table(Likdat$q1))
+```
+
+Repite con las otras 3 preguntas. 
 Mejora la apariencia de las gráficas y pégalas en un documento. 
-
 
 Cómo analizar reactivos politómicos
 Por ejemplo, si al evaluar un ensayo hay 4 rubros o aspectos. 
 
->polydat<-read.csv(file.choose())
-> View(polydat)
+```
+polydat<-read.csv(file.choose())
+```
+```
+View(polydat)
+```
 
-#Hacemos una variable que nos combine todos los puntajes de cada rubro
-> polys   <- c("poly1", "poly2", "poly3", "poly4")
+Hacemos una variable que nos combine todos los puntajes de cada rubro
+```
+polys   <- c("poly1", "poly2", "poly3", "poly4")
+```
 
-#Analizamos los rubros
-> itanp   <- itemAnalysis(polydat[,polys])
->str(itanp)
+Analizamos los rubros
+```
+itanp   <- itemAnalysis(polydat[,polys])
+```
+```
+str(itanp)
+```
 
-#Aislamos el item report
-> itanp$itemReport
+Aislamos el item report
+```
+itanp$itemReport
+```
 
-#Aunque podemos ver el promedio para cada uno de los rubros, queremos ver la dificultad también. 
+Aunque podemos ver el promedio para cada uno de los rubros, queremos ver la dificultad también. 
 
-> PolyAnReport   <- itanp$itemReport
-> PolyAnReport$item_p <- PolyAnReport$itemMean/itanp$nItem
-> PolyAnReport
+```{r}
+PolyAnReport   <- itanp$itemReport
+PolyAnReport$item_p <- PolyAnReport$itemMean/itanp$nItem
+PolyAnReport
+```
