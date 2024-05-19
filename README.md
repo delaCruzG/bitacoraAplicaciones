@@ -16,11 +16,11 @@ La organización del contenido es como se presenta a continuación:
 
 [Semana 3. Clase 3: 16 de Febrero: Correlaciones y Gráficas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-3-clase-3-16-de-febrero)
 
-[Semana 5. Clase 4: 26 de Febrero: Medidas de tendencia central e histogramas en R. ](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-5-clase-4-26-de-febrero)
+[Semana 5. Clase 4: 26 de Febrero: Medidas de tendencia central e histogramas en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-5-clase-4-26-de-febrero)
 
-[Semana 6. Clase 5 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R. ](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-6-clase-5-4-de-marzo-del-2024-medidas-de-dispersi%C3%B3n)
+[Semana 6. Clase 5 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-6-clase-5-4-de-marzo-del-2024-medidas-de-dispersi%C3%B3n)
 
-[Semana 7. Clase 6 11 de Marzo: Distribución de frecuencias en R. ](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-7-clase-6-11-de-marzo-del-2024)
+[Semana 7. Clase 6 11 de Marzo: Distribución de frecuencias en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-7-clase-6-11-de-marzo-del-2024)
 
 [Semana 9. Clase 9 1 de Abril: Histogramas, gráficos de caja y dotplots en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-9-clase-8-1-de-abril-del-2024)
 
@@ -32,7 +32,7 @@ La organización del contenido es como se presenta a continuación:
 
 ___________________________________________________________________________________________
 
-## Semana 1. Clase 1: 2 de Febrero del 2024
+## Semana 1. Clase 1. 2 de Febrero: Intro a R y R studio. Swirl.
 
 En esta clase instalamos R y R estudio. 
 
@@ -70,7 +70,7 @@ Y la concatenación:
 c(x,y, ..., z)
 ```
 
-## Semana 2. Clase 2: 9 de Febrero del 2024
+## Semana 2. Clase 2. 9 de Febrero: Tipos de variables en R. Data frames.
 
 En esta clase se estudiaron varios conceptos relevantes para trabajar con datos y dataframes.
 
@@ -228,7 +228,7 @@ Para obtener el resultado del tipo de dato para cada columna debemos usar
 sapply(<varDF>, <función_a_repetir>)
 ```
 
-## Semana 3. Clase 3: 16 de Febrero
+## Semana 3. Clase 3. 16 de Febrero: Correlaciones y Gráficas en R.
 
 
 //Aún pendiente de detalles:
@@ -278,7 +278,7 @@ Dibujar línea de tendencia en rojo
 abline(lm( total_ex1~total_ex2),col="red")
 ```
 
-## Semana 5. Clase 4: 26 de Febrero
+## Semana 5. Clase 4: 26 de Febrero: Medidas de tendencia central e histogramas en R.
 
 //Pendiente de explicación:
 
@@ -578,7 +578,7 @@ sapply(banana, class)
 print(banana$Gender)
 ````
 
-## Semana 6. Clase 5 4 de Marzo del 2024. Medidas de Dispersión.
+## Semana 6. Clase 5 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
 
 ```
 data("Pima.te")
@@ -795,15 +795,10 @@ table(leuk$ag)
 
 
 
-## Semana 7. Clase 6 11 de Marzo del 2024.
+## Semana 7. Clase 6 11 de Marzo: Distribución de frecuencias en R.
 
-
-
-## Semana 8. No hubo Clase.
-
-Clase 7 21 de Marzo del 2024
-
-## Semana 9. Clase 8 1 de Abril del 2024
+ 
+## Semana 9. Clase 9 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
 
 En esta clase nos encargamos de aplicar la teoría de sesgo y curtósis:
 
@@ -999,7 +994,7 @@ Graficamos nuestros datos con:
 boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2), names = c("expenditureyear0", "expenditureyear10"), las = 2, col = c("orange","red"), border = "brown", horizontal = TRUE)
 ```
 
-## Semana 10. Clase 9 1 de Abril del 2024. Formas alternativs de reportar puntajes.
+## Semana 10. Clase 9 1 de Abril del 2024: Formas alternativs de reportar puntajes.
 
 15 de abril #Cargar resultados crudos de una prueba de opción múltiple
 
@@ -1264,7 +1259,7 @@ En este reporte de distractores, comenta al lado de cada reactivo cuáles reacti
 
 Sube tus 2 archivos a Classroom.
 
-## Semana 13. Clase 10 29 de abril Análisis de Reactivos II
+## Semana 13. Clase 10 29 de abril: Análisis de Reactivos II
 
 
 En este ejercicio analizamos escalas de likert.
