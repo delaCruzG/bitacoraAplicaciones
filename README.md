@@ -665,48 +665,83 @@ boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2),
 ```
 
 #### 15 de abril #Cargar resultados crudos de una prueba de opción múltiple
+
+```
 score <- read.csv("http://lang-tech.net/doc/sample.score.csv", header = TRUE, sep = ",")
+```
+```
 View(score)
+```
 
-#Cargar la clave de respuestas (si te sale un warning es normal)
+Cargar la clave de respuestas (si te sale un warning es normal)
+```
 key <- read.csv("http://lang-tech.net/doc/sample.key.csv", header = TRUE, sep =",")
+```
 
-#Instala el paquete CTT
+```
+Instala el paquete CTT
+```
+```
 install.packages("CTT")
+```
+```
 library(CTT)
+```
 
-# Calificar prueba
+Calificar prueba
+```
 myScore <- score(score, key, output.scored=TRUE)
+```
 
-#Ve qué hay en myScore
+Ve qué hay en myScore
+```
 View(myScore)
+```
 
-# ¿Cuántas pruebas vamos a calificar?
+¿Cuántas pruebas vamos a calificar?
+```
 length(myScore$score)
+```
 
-#Saca el promedio y mediana usando una sola función (myScore$score)
+Saca el promedio y mediana usando una sola función (myScore$score)
 
-#Puntajes alternativos
+Puntajes alternativos
 
-#Sacar percentiles
+Sacar percentiles
+```
 percentil<-score.transform(myScore$score,mu.new=9.44,sd.new=3, normalize=TRUE)
-View(percentil) 
+```
 
-#Multiplica los p.scores por 100 para obtener el percentil en porcentaje
-percentil<-percentil$p.scores*100
-
-#¿Cuántos decimales tienen tus valores del percentil?
+```
 View(percentil)
+```
 
-#Redondea a 2 decimales
+Multiplica los p.scores por 100 para obtener el percentil en porcentaje
+
+```
+percentil<-percentil$p.scores*100
+```
+
+¿Cuántos decimales tienen tus valores del percentil?
+```
+View(percentil)
+```
+
+Redondea a 2 decimales
+```
 percentil<-round(percentil2,digits=2)
+```
 
-#Z-score
+Z-score
+```
 zscore <- scale(rowSums(myScore$scored), center = TRUE, scale = TRUE)
+```
 
-#T-scores: ¿Recuerdas la fórmula para sacarlo a partir del t-score? Cálculalos.
+T-scores: ¿Recuerdas la fórmula para sacarlo a partir del t-score? Cálculalos.
 
-#Estaninas- (la fórmula más difícil de hoy)
+Estaninas- (la fórmula más difícil de hoy)
+
+```
 stanine.scale <- vector("numeric")
 i <- 1
 for (i in 1:length(myScore$score)){
@@ -716,22 +751,31 @@ for (i in 1:length(myScore$score)){
   if (stanine.scale[i] >= 10){
     stanine.scale[i] <- 9
   }
-  
-#Crea una variable con los puntajes totales
+ ``` 
+Crea una variable con los puntajes totales
+```
 puntaje<-rowSums(myScore$scored)
+```
   
-#Crea una tabla con los puntajes totales.
+Crea una tabla con los puntajes totales.
+```
 tabla<-table(puntaje)
+```
   
-#Añade a la tabla las otras formas en que se pueden reportar puntajes
+Añade a la tabla las otras formas en que se pueden reportar puntajes
+```
 tabla<-cbind(puntaje, percentil, zscore, tscore, Estaninas=stanine.scale)
+```
   
-#Ve el resultado
+Ve el resultado
+```
 View(tabla)
+```
   
-#¿Te gustan los nombres de las columnas? Cámbialos. 
+¿Te gustan los nombres de las columnas? Cámbialos. 
+```
 colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
-
+```
 ## Semana 10. Clase 9 1 de Abril del 2024. Formas alternativs de reportar puntajes.
 
 #Cargar resultados crudos de una prueba de opción múltiple
