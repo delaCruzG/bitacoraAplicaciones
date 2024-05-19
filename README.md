@@ -581,10 +581,6 @@ print(banana$Gender)
 ## Semana 6. Clase 5. 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
 
 
-
-## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
-
-
 ```
 data("Pima.te")
 ```
@@ -797,6 +793,78 @@ table(leuk$ag)
 
  absent present 
      16      17
+
+
+
+## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
+
+> library(MASS)      # load the MASS package 
+> painters 
+
+Vamos a sacar la frecuencia de la última columna, escuelas
+Intenten:
+
+> frequency(painters$School)
+
+Ahora:
+> table(painters$School)
+
+> cumsum(table(painters$School))
+ A  B  C  D  E  F  G  H 
+10 16 22 32 39 43 50 54 
+
+Para convertirlo en una “Tabla”
+>cbind(cumsum(table(painters$School)))
+
+>table(painters$School) /nrow(painters)
+>table(painters$School) /length(painters$School)
+
+Pueden guardar el resultado en una variable para que sea más fácil “llamarlo”
+
+freqr<- table(painters$School) / length(painters$School)
+
+Para corroborar que suman 1 todas las frecuencias:
+> sum(freqr)
+
+Para transformar en porcentaje:
+ freqpct<-table(painters$School)/nrow(painters) *100
+> freqpct
+Si queremos redondear a sólo 2 decimales, podemos usar
+>round(freqpct,2)
+Para checar que sumen 100%, usamos:
+>sum(freqpct)
+
+Crear una tabla con frecuencia absoluta, relativa y acumulada
+> xout <- as.data.frame(table(painters$School))
+> xout <- transform(xout, cumFreq = cumsum(Freq), relative = prop.table(Freq))
+> xout
+
+Crear manualmente intervalos
+> breaks=seq(1,50,by=10)
+> breaks
+[1]  1 11 21 31 41
+> breaks=seq(0,50, by=10)
+> breaks
+[1]  0 10 20 30 40 50
+
+> clasif=cut(ch6ds1$Reading,breaks,right=FALSE)
+> freq.int<-table(clasif)
+> freq.int
+clasif
+ [0,10) [10,20) [20,30) [30,40) [40,50) 
+      3      12      20      12       3 
+> cbind(freq.int)
+        freq.int
+[0,10)         3
+[10,20)       12
+[20,30)       20
+
+
+
+
+hist(ch6ds1$Reading,xlab="Scores",main="Reading",col="deeppink",breaks=7)
+hist(ch6ds1$Reading, probability = TRUE)
+lines(density(ch6ds1$Reading))
 
  
 ## Semana 9. Clase 9. 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
@@ -1115,44 +1183,50 @@ colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
 ## Semana 12. Clase 9. 22 de abril: Análisis de Reactivos
 
 Análisis de reactivos en R
- 
-1. Carga tu base de datos con las respuestas
-Es buena idea no usar nombres muy largos de títulos en las columnas.
- 
+
+1. Primero cargamos un documento con las respuestas.
+
 ```
-dat <- read.csv(file.choose())
+data <- read.csv(file.choose())
 ```
- 
+Comprobamos que su contenido
+
 ```
 View(dat)
 ```
  
 2. Definir ítems y respuestas
-Ojo: Tienen que coincidir en longitud y las comillas tienen que ser rectas.
+
+Aquí asignamos la la concatenación de los items a la variable items.
  
  ```
 items  <- c("i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10","i11","i12", "i13","i14")
 ```
  
-Otra forma de hacer esto mismo sin escribir variable por variable es:
+Otra forma de hacer esto mismo sin escribir variable por variable es con la función paste0():
+
 ```
 items<- paste0("i", 1:14)
 ```
-(si lo hiciste con la función anterior, puedes intentar de nuevo después de introducir:
- 
+
+Con la función rm() podemos remover la variable ítems de ser necesario.
+
 ```
 rm(ítems)
 ```
+
+Se definieron las respuestas asignando a la variable key una concatenación de letras.
 
 ```
 key	<- c("A", "J", "M", "Q", "C", "F", "N", "I", "E", "H", "L", "O", "G", "K") 
 ```
  
-Instalar paquete CTT
+Se instala al paquete CTT
  
 ```
 install.packages("CTT")
 ```
+Se activa
 ```
 library("CTT")
 ```
@@ -1160,66 +1234,74 @@ library("CTT")
 3.Calificar las respuestas
  
 Para poder consultar el resultado después, vamos a guardarlo en una variable
- 
+
+Primero asignamos a la variable puntajes el resultado de la función con los siguientes parametros:
+
+
 ```
 puntajes<-score(dat[,items], key, output.scored = TRUE, ID = dat$candno)
 ```
+
+También aplicamos esta función
  
 ```
 options(max.print = 10000)
 ```
- 
-'''r
-puntajes
-'''
 
+Imprimimos nuestros puntajes
 ```{r}
-# execute code if the date is later than a specified day
-do_it = Sys.Date() > '2018-02-14'
+puntajes
 ```
+Podemos usar $ para aislar resultados.
 
-Si queremos aislar uno de estos 2 resultados, podemos usar el signo $, por ejemplo:
 ```{r}
 puntajes$score
 ```
+
 ```{r}
 puntajes$scored
 ```
 
-
-Si queremos convertir estos puntajes a una tabla (data frame)
+Se convirtieron los puntajes a un data frame
 
 ```
 tabpuntajes <- as.data.frame(puntajes$scored)
 ```
 
-Le podemos adjuntar el vector de las puntuaciones totales
+Para añadir los totales corremos:
+
+
 ```
 tabpuntajes$tot <-puntajes$score
 ```
+Corroboramos con
+
 ```
 tabpuntajes
 ```
 
 
-Vamos a guardarla como csv
+Ahora para exportarlo como csv, corremos:
+
 ```
 write.csv(tabpuntajes,"PuntajesSB.csv")
 ```
 
-
-Abre el CSV, verifica que esté correcto. Este es 1 de 2 archivos que tienes que subir a Classroom
-
-
 4. Análisis de ítems
+
+Con la función itemAnalysis podemos automatizar esto
+
 ```
 analisis<-itemAnalysis(tabpuntajes[,items])
 ```
+
+Corroboramos
+
 ```
 analisis
 ```
 
-Si queremos algo más extenso, podemos usar:
+O con más detalle
  
 ```
 str(analisis)
@@ -1227,13 +1309,13 @@ str(analisis)
   
  
 5. Análisis de distractores
+   
 CTT tiene una función para esto. Por default, necesita dividir los datos en 3 grupos por lo menos.
- 
+
  
 ```
 distractorAnalysis(dat[, items], key, nGroups=3, digits=2)
-```
- 
+``` 
  
 Anteriormente, habíamos visto que para obtener el índice de discriminación en grupos pequeños necesitábamos dividir por la mitad a un grupo pequeño o tomar en cuenta el 25% inferior y el 25% superior. Si quisiéramos obtener la proporción de respuestas correctas en estos últimos:
 
@@ -1244,21 +1326,17 @@ AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), d
 AnDist
 ```
   
-Si sólo se quieren analizar algunos reactivos, se puede indicar en la función como en el siguiente ejemplo:
+Ejemplo de análisis de reacrivos concretos:
 
 ```
 DistAn3 <- distractorAnalysis(dat[, items], key, defineGroups=c(.27, .46, .27), digits=2)[1:4]
-``` 
-En la misma función se puede indicar que nos los guarde como CSV:
+```
+
+Uno de los parametros de esta función nos permite guardar el output como csv.
  
 ```
 AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2,        	csvReport="reporte_distractores.csv")
 ```
-
-En este reporte de distractores, comenta al lado de cada reactivo cuáles reactivos/distractores crees que no sean buenos y necesitan cambiarse. Ten en cuenta que esta es una prueba de relacionar columnas, no de opción múltiple. 
-
-
-Sube tus 2 archivos a Classroom.
 
 ## Semana 13. Clase 10. 29 de abril: Análisis de Reactivos II
 
