@@ -26,9 +26,9 @@ La organización del contenido es como se presenta a continuación:
 
 [Semana 10. Clase 10 8 de Abril: Formas alternativas de reportar puntajes en R.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-10-clase-9-1-de-abril-del-2024-formas-alternativs-de-reportar-puntajes)
 
-[Semana 12. Clase 11 22 de abril: Análisis de Reactivos](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-12-clase-9-22-de-abril-an%C3%A1lisis-de-reactivos)
+[Semana 12. Clase 12 22 de abril: Análisis de Reactivos](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-12-clase-9-22-de-abril-an%C3%A1lisis-de-reactivos)
 
-[Semana 13. Clase 12 29 de abril: Análisis de Reactivos II](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-13-clase-10-29-de-abril-an%C3%A1lisis-de-reactivos-ii)
+[Semana 13. Clase 13 29 de abril: Análisis de Reactivos II](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-13-clase-10-29-de-abril-an%C3%A1lisis-de-reactivos-ii)
 
 ___________________________________________________________________________________________
 
