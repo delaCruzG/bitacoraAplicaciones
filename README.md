@@ -774,6 +774,7 @@ table(leuk$ag)
 Clase 7 21 de Marzo del 2024
 
 ## Semana 9. Clase 8 1 de Abril del 2024
+
 En esta clase nos encargamos de aplicar la teoría de sesgo y curtósis:
 
 Primero se installa moments
@@ -800,71 +801,86 @@ Vemos el dataframe
 View(mtcars)
 ```
 
+NOTA:
 Recordar:
->3 lepto, 
-= 3 meso
-< plati
+> >3 lepto""" 
+> = 3 meso"""
+> < plati
 
--0.5 a 0.5 simétrica
--1 a 1, sesgo moderado
-mayor a -1 y 1, sesgo considerable
+> -0.5 a 0.5 simétrica
+> -1 a 1, sesgo moderado
+> mayor a -1 y 1, sesgo considerable
 
 Aplicamos la función skewness a la columna mpg
 
 ```
 skewness(mtcars$mpg)
 ```
+Aplicamos la función kurtosis a la columna mpg
+
 ```
 kurtosis(mtcars$mpg)
 ```
+Hacemos un histograma de mpg 
 
 ```
 hist(mtcars$mpg)
 ```
+Con el parametro probability = TRUE podemos obtener una visualización útil para aplicar nua línea 
 ```
 hist(mtcars$mpg, probability=TRUE)
 ```
+Marcamos una línea de densidad (es necesario tener prob = TRUE)
 ```
 lines(density(mtcars$mpg))
 ```
 
-Aplicamos la función skewness a la columna wt y disp
+Aplicamos la función skewness y kurtosis a la columna wt y disp
+
+Para wt
 
 ```
 skewness(mtcars$wt)
-```
-```
 kurtosis(mtcars$wt)
 ```
+Hacemos histograma
 
 ```
 hist(mtcars$wt)
-```
-```
 hist(mtcars$wt, probability=TRUE)
 ```
+
+Marcamos sus líneas de dénsidad
+
 ```
 lines(density(mtcars$wt))
 ```
+Para disp
 
 ```
 skewness(mtcars$disp)
-```
-```
 kurtosis(mtcars$disp)
 ```
+Hacemos histograma
+
+Simple
 
 ```
 hist(mtcars$disp)
 ```
+Activamos el parametro prob.
+
 ```
 hist(mtcars$disp, probability=TRUE)
 ```
+
+Añadimos poligono
+
 ```
 lines(density(mtcars$disp))
 ```
 
-usamos saply
+Como en otros ejercicios, usamos saply
 
 ```
 sapply(mtcars, skewness)
@@ -876,47 +892,63 @@ graficamos carb por ser mayor a uno
 hist(mtcars$carb, probability=TRUE)
 ```
 
-vemos que para la grafica anterior hay uns sesgo a la derecha
+Para este caso particular vemos que para la grafica anterior hay uns sesgo a la derecha.
 
-Dot plot
 
+### Dot plot
+
+Usamos la función stripchart.
+
+Ejemplos de uso
 ```
 stripchart(mtcars$carb, method="stack", offset=1, at=0, pch=20, col="red")
 ```
 
-Box plot
+#### Box plot
 
+Usamos la función boxplot
+
+Ejemplos de uso 
 ```
 boxplot(mtcars$disp, horizontal=TRUE)
 ```
+
 ```
 stripchart(mtcars$disp, method="jitter", pch=19, add=TRUE, col="orange")
 ```
 
-TODO LO ANTERIOR FUE PARA PRACTICAR, LA ACTIVIDAD SE HACE CON LOS DATOS crime_R
+TODO LO ANTERIOR FUE PARA PRACTICAR, LA ACTIVIDAD SE HIZO CON LOS DATOS crime_R
 
 ```
 crime <- read.csv(file.choose())
 ```
+
 ```
 View(crime)
+
 ```
 Se cambia eje x y y 
 
+A continuación se muestra ina serie de manipulación de los parametros de hist.
 ```
 hist(crime$StateSize10, main="StateSize10", xlab="StateSize", ylab="Frecuencia", col="red")
 ```
 ```
 hist(crime$HighYouthUnemploy10, main="HighYouthUnemploy10", xlab="HighYouthUnemploy10", ylab="Frecuencia", col="blue")
 ```
+Al final se utilizaron estos parametros:
+
 ```
 hist(crime$YouthUnemployment, main="YouthUnemployment", xlab="YouthUnemployment", ylab="Frecuencia", col="green")
 ```
+Se hizo un dotplot
+
 ```
 stripchart(crime$Males, method="stack", offset=2, at=0, pch=19, col="darkgreen")
 ```
 
-preparar para boxplot de Expenditure Year 0 y Expenditure Year 10
+Preparación de datos para boxplot de Expenditure Year 0 y Expenditure Year 10
+
 ```
 expenditureyear0 <- crime$ExpenditureYear0
 ```
@@ -930,6 +962,9 @@ expenditureyear0_norm <- rnorm(200,mean=mean(expenditureyear0, na.rm=TRUE), sd=s
 ```
 expenditureyear10_norm <- rnorm(200,mean=mean(expenditureyear10, na.rm=TRUE), sd=sd(expenditureyear10, na.rm=TRUE))
 ```
+
+Graficamos nuestros datos con:
+
 ```
 boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2), names = c("expenditureyear0", "expenditureyear10"), las = 2, col = c("orange","red"), border = "brown", horizontal = TRUE)
 ```
