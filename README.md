@@ -194,7 +194,7 @@ La variable que guarda nuestro dataframe no puede usarse como argumento de class
 
 Para obtener el resultado del tipo de dato para cada columna debemos usar
 
-```python
+```{r}
 sapply(<varDF>, <función_a_repetir>)
 ```
 
@@ -203,30 +203,50 @@ sapply(<varDF>, <función_a_repetir>)
 
 //Aún pendiente de detalles:
 
+```
 total_ex1 <- rowSums(examen1)
+```
+
+```
 total_ex2 <- rowSums(examen2)
-> cor(total_ex1,total_ex2)
+```
+
+```
+cor(total_ex1,total_ex2)
+```
 
 Vamos a hacer una gráfica de dispersión
->plot(total_ex1,total_ex2)
+
+```
+plot(total_ex1,total_ex2)
+```
  
 Vamos a hermosear la gráfica para que se vea mejor. 
 
 Cambiar la escala de los ejes: 
-> plot(total_ex1,total_ex2, xlim=c(0,20), ylim=c(0,20))
+```
+plot(total_ex1,total_ex2, xlim=c(0,20), ylim=c(0,20))
+```
 
 Agregar títulos en los ejes
->plot(total_ex1,total_ex2, xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2")
+```
+plot(total_ex1,total_ex2, xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2")
+```
 
 Agregar un título principal
->plot(total_ex1,total_ex2,main="Prueba de Validez de Criterio", xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2")
+```
+plot(total_ex1,total_ex2,main="Prueba de Validez de Criterio", xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2")
+```
 
 Rellenar los puntos y ponerlos de color verde obscuro (dark green)
- plot(total_ex1,total_ex2,main="Prueba de Validez de Criterio", xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2",pch=19, col="dark green")
+```
+plot(total_ex1,total_ex2,main="Prueba de Validez de Criterio", xlim=c(0,20), ylim=c(0,20), xlab="Examen 1", ylab="Examen 2",pch=19, col="dark green")
+```
 
 Dibujar línea de tendencia en rojo
+```
 abline(lm( total_ex1~total_ex2),col="red")
-
+```
 
 ## Semana 5. Clase 4: 26 de Febrero
 
@@ -531,43 +551,63 @@ print(banana$Gender)
 ## Semana 6. Clase 5 4 de Marzo del 2024. Medidas de Dispersión.
 
 ```
-> data("Pima.te")
+data("Pima.te")
+```
+
 Warning message:
 In data("Pima.te") : data set ‘Pima.te’ not found
-> library(MASS)
-> data("Pima.te")
-> #Vemos el número de datos
-> nrow(Pima.te)
-[1] 332
-> 
-> View(Pima.te)
-> summary(Pima.te$glu)
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   65.0    96.0   112.0   119.3   136.2   197.0 
-> 197-65
-[1] 132
-> var <- 197-65
-> range(Pima.te$glu)
-[1]  65 197
-> 
-> 
-> IQR(Pima.te$glu)
-[1] 40.25
-> var(Pima.te$glu)
-[1] 930.3194
-> sqrt(var(Pima.te$glu))
-[1] 30.50114
-> sqrt(var(Pima.te$glu))
-[1] 30.50114
-> sqrt(var(Pima.te$glu))
-[1] 30.50114
-> var(Pima.te$glu)
-[1] 930.3194
-> sqrt(var(Pima.te$glu))
-[1] 30.50114
-> sd(Pima.te$glu)
-[1] 30.50114
-> sapply(Pima.te, sd)
+```
+library(MASS)
+```
+```
+data("Pima.te")
+```
+```
+#Vemos el número de datos
+```
+```
+nrow(Pima.te)
+```
+```
+View(Pima.te)
+```
+```
+summary(Pima.te$glu)
+```
+```
+var <- 197-65
+```
+
+```
+range(Pima.te$glu)
+```
+```
+IQR(Pima.te$glu)
+```
+```
+ var(Pima.te$glu)
+```
+```
+sqrt(var(Pima.te$glu))
+```
+```
+sqrt(var(Pima.te$glu))
+```
+```
+sqrt(var(Pima.te$glu))
+```
+```
+var(Pima.te$glu)
+```
+```
+sqrt(var(Pima.te$glu))
+```
+```
+sd(Pima.te$glu)
+```
+```
+sapply(Pima.te, sd)
+```
 Error in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm = na.rm) : 
   Calling var(x) on a factor x is defunct.
   Use something like 'all(duplicated(x)[-1L])' to test for a constant vector.
@@ -598,8 +638,12 @@ Error in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm = na.r
 Warning message:
 In mean.default(Pima.te$glue) :
   argument is not numeric or logical: returning NA
-> data(leuk)
-> force(leuk)
+```
+data(leuk)
+```
+```
+force(leuk)
+```
       wbc      ag time
 1    2300 present   65
 2     750 present  156
@@ -634,56 +678,95 @@ In mean.default(Pima.te$glue) :
 31  79000  absent   30
 32 100000  absent    4
 33 100000  absent   43
-> View(leuk)
-> nrows(leuk)
+```
+View(leuk)
+```
+```
+nrows(leuk)
+```
 Error in nrows(leuk) : could not find function "nrows"
-> nrow(leuk)
-[1] 33
-> summary(leuk$time)
+```
+nrow(leuk)
+```
+
+```
+summary(leuk$time)
+```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    1.00    4.00   22.00   40.88   65.00  156.00 
-> mvf(leuk$time)
+```
+mvf(leuk$time)
+```
+
 Error in mvf(leuk$time) : could not find function "mvf"
-> summary(leuk$time)
+```
+summary(leuk$time)
+```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    1.00    4.00   22.00   40.88   65.00  156.00 
-> mvf(leuk$time)
+```
+mvf(leuk$time)
+```
 Error in mvf(leuk$time) : could not find function "mvf"
-> library(modeest)
-> mvf(leuk$time)
+```
+library(modeest)
+```
+```
+mvf(leuk$time)
+```
 Error in mvf(leuk$time) : could not find function "mvf"
-> mfv(leuk$time)
-[1] 4
-> var(Pima.te$glu)
-[1] 930.3194
-> range(leuk$time)
-[1]   1 156
-> var1 <- 197-65
+```
+mfv(leuk$time)
+```
+```
+var(Pima.te$glu)
+```
+```
+range(leuk$time)
+```
+```
+var1 <- 197-65
+```
+```
 > IQR(leuk$time)
+```
 [1] 61
+```
 > range(leuk$wbc)
-[1]    750 100000
-> var1 <- 100000-750
-> IQR(leuk$wbc)
-[1] 26700
-> var1
-[1] 99250
-> var(leuk$wbc)
-[1] 1189517888
-> sqrt(var(leuk$wbc))
-[1] 34489.39
-> table(leuk$ag)
+```
+
+```
+var1 <- 100000-750
+```
+
+```
+IQR(leuk$wbc)
+```
+
+```
+var1
+```
+
+```
+var(leuk$wbc)
+```
+
+```
+sqrt(var(leuk$wbc))
+```
+
+```
+table(leuk$ag)
+```
+
 
  absent present 
      16      17
-```
+
 
 
 ## Semana 7. Clase 6 11 de Marzo del 2024.
 
-```
-
-```
 
 
 ## Semana 8. No hubo Clase.
