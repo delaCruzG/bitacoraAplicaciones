@@ -10,7 +10,7 @@ ________________________________________________________________________________
 
 La organización del contenido es como se presenta a continuación:
 
-[Semana 1. Clase 1: 2 de Febrero: Intro a R y R studio. Swirl.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024))
+[Semana 1. Clase 1: 2 de Febrero: Intro a R y R studio. Swirl.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024)
 
 [Semana 2. Clase 2: 9 de Febrero: Tipos de variables en R. Data frames.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-2-clase-2-9-de-febrero-del-2024)
 
