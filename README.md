@@ -762,7 +762,7 @@ Ojo: Tienen que coincidir en longitud y las comillas tienen que ser rectas.
 items  <- c("i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10","i11","i12", "i13","i14")
 ```
  
-#Otra forma de hacer esto mismo sin escribir variable por variable es:
+Otra forma de hacer esto mismo sin escribir variable por variable es:
 ```
 items<- paste0("i", 1:14)
 ```
@@ -776,7 +776,7 @@ rm(ítems)
 key	<- c("A", "J", "M", "Q", "C", "F", "N", "I", "E", "H", "L", "O", "G", "K") 
 ```
  
-#Instalar paquete CTT
+Instalar paquete CTT
  
 ```
 install.packages("CTT")
@@ -785,7 +785,7 @@ install.packages("CTT")
 library("CTT")
 ```
  
-# 3.Calificar las respuestas
+3.Calificar las respuestas
  
 Para poder consultar el resultado después, vamos a guardarlo en una variable
  
@@ -806,7 +806,7 @@ puntajes
 do_it = Sys.Date() > '2018-02-14'
 ```
 
-#Si queremos aislar uno de estos 2 resultados, podemos usar el signo $, por ejemplo:
+Si queremos aislar uno de estos 2 resultados, podemos usar el signo $, por ejemplo:
 ```{r}
 puntajes$score
 ```
@@ -821,7 +821,7 @@ Si queremos convertir estos puntajes a una tabla (data frame)
 tabpuntajes <- as.data.frame(puntajes$scored)
 ```
 
-#Le podemos adjuntar el vector de las puntuaciones totales
+Le podemos adjuntar el vector de las puntuaciones totales
 ```
 tabpuntajes$tot <-puntajes$score
 ```
@@ -830,16 +830,16 @@ tabpuntajes
 ```
 
 
-#Vamos a guardarla como csv
+Vamos a guardarla como csv
 ```
 write.csv(tabpuntajes,"PuntajesSB.csv")
 ```
 
 
-#Abre el CSV, verifica que esté correcto. Este es 1 de 2 archivos que tienes que subir a Classroom
+Abre el CSV, verifica que esté correcto. Este es 1 de 2 archivos que tienes que subir a Classroom
 
 
-# 4. Análisis de ítems
+4. Análisis de ítems
 ```
 analisis<-itemAnalysis(tabpuntajes[,items])
 ```
@@ -847,7 +847,7 @@ analisis<-itemAnalysis(tabpuntajes[,items])
 analisis
 ```
 
-#Si queremos algo más extenso, podemos usar:
+Si queremos algo más extenso, podemos usar:
  
 ```
 str(analisis)
@@ -863,7 +863,7 @@ distractorAnalysis(dat[, items], key, nGroups=3, digits=2)
 ```
  
  
-#Anteriormente, habíamos visto que para obtener el índice de discriminación en grupos pequeños necesitábamos dividir por la mitad a un grupo pequeño o tomar en cuenta el 25% inferior y el 25% superior. Si quisiéramos obtener la proporción de respuestas correctas en estos últimos:
+Anteriormente, habíamos visto que para obtener el índice de discriminación en grupos pequeños necesitábamos dividir por la mitad a un grupo pequeño o tomar en cuenta el 25% inferior y el 25% superior. Si quisiéramos obtener la proporción de respuestas correctas en estos últimos:
 
 ```
 AnDist <-distractorAnalysis(dat[, items], key, defineGroups=c(.25, 0.50, .25), digits=2)
