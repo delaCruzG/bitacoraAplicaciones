@@ -187,14 +187,16 @@ rownames()[x]
 Nota:
 La variable que guarda nuestro dataframe no puede usarse como argumento de class para saber los tipos de datos de sus columnas. Class nos da como output "data.frame"
 
-'''sh
+```{r}
 > class(banana)
 [1] "data.frame"
-'''
+```
 
 Para obtener el resultado del tipo de dato para cada columna debemos usar
 
->sapply(<varDF>, <función_a_repetir>)
+```python
+sapply(<varDF>, <función_a_repetir>)
+```
 
 ## Semana 3. Clase 3: 16 de Febrero
 
