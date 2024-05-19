@@ -2,7 +2,7 @@
 
 ###  Héctor García de la Cruz
 
-Este documento corresponde a la bitacora del curso de aplicaciones estadísticas impartido por la profesora Dunia Rassy.
+Este documento corresponde a la bitacora del curso de aplicaciones estadísticas impartido por la profesora Dunia Rassy en el periodo escolar 2024-2.
 
 ___________________________________________________________________________________________
 
@@ -278,7 +278,7 @@ Dibujar línea de tendencia en rojo
 abline(lm( total_ex1~total_ex2),col="red")
 ```
 
-## Semana 5. Clase 4: 26 de Febrero: Medidas de tendencia central e histogramas en R.
+## Semana 5. Clase 4. 26 de Febrero: Medidas de tendencia central e histogramas en R.
 
 //Pendiente de explicación:
 
@@ -578,7 +578,7 @@ sapply(banana, class)
 print(banana$Gender)
 ````
 
-## Semana 6. Clase 5 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
+## Semana 6. Clase 5. 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
 
 ```
 data("Pima.te")
@@ -795,10 +795,10 @@ table(leuk$ag)
 
 
 
-## Semana 7. Clase 6 11 de Marzo: Distribución de frecuencias en R.
+## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
 
  
-## Semana 9. Clase 9 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
+## Semana 9. Clase 9. 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
 
 En esta clase nos encargamos de aplicar la teoría de sesgo y curtósis:
 
@@ -994,7 +994,7 @@ Graficamos nuestros datos con:
 boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2), names = c("expenditureyear0", "expenditureyear10"), las = 2, col = c("orange","red"), border = "brown", horizontal = TRUE)
 ```
 
-## Semana 10. Clase 9 1 de Abril del 2024: Formas alternativs de reportar puntajes.
+## Semana 10. Clase 9. 1 de Abril del 2024: Formas alternativs de reportar puntajes.
 
 15 de abril #Cargar resultados crudos de una prueba de opción múltiple
 
@@ -1111,7 +1111,7 @@ colnames(tabla)<-c('Puntaje', 'Percentil', 'Z-score', 'T-score','Estanina')
 
 
 
-## Semana 12. Clase 9 22 de abril: Análisis de Reactivos
+## Semana 12. Clase 9. 22 de abril: Análisis de Reactivos
 
 Análisis de reactivos en R
  
@@ -1259,7 +1259,7 @@ En este reporte de distractores, comenta al lado de cada reactivo cuáles reacti
 
 Sube tus 2 archivos a Classroom.
 
-## Semana 13. Clase 10 29 de abril: Análisis de Reactivos II
+## Semana 13. Clase 10. 29 de abril: Análisis de Reactivos II
 
 
 En este ejercicio analizamos escalas de likert.
