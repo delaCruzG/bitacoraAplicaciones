@@ -8,26 +8,23 @@ La organización del contenido es como se presenta a continuación:
 
 [Semana 1. Clase 1: 2 de Febrero del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024))
 
-[Semana 2. Clase 2: 9 de Febrero del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024))
+[Semana 2. Clase 2: 9 de Febrero del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-2-clase-2-9-de-febrero-del-2024)
 
-[Semana 3. Clase 3: 16 de Febrero](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024)
+[Semana 3. Clase 3: 16 de Febrero](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-3-clase-3-16-de-febrero)
 
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 5. Clase 4: 26 de Febrero](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-5-clase-4-26-de-febrero)
 
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 6. Clase 5 4 de Marzo del 2024. Medidas de Dispersión.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-6-clase-5-4-de-marzo-del-2024-medidas-de-dispersi%C3%B3n)
 
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
-[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 7. Clase 6 11 de Marzo del 2024.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-7-clase-6-11-de-marzo-del-2024)
+
+[Semana 9. Clase 8 1 de Abril del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-9-clase-8-1-de-abril-del-2024)
+
+[Semana 10. Clase 9 1 de Abril del 2024. Formas alternativs de reportar puntajes.](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-10-clase-9-1-de-abril-del-2024-formas-alternativs-de-reportar-puntajes)
+
+[Semana 12. Clase 9 22 de abril: Análisis de Reactivos](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-12-clase-9-22-de-abril-an%C3%A1lisis-de-reactivos)
+
+[Semana 13. Clase 10 29 de abril Análisis de Reactivos II](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-13-clase-10-29-de-abril-an%C3%A1lisis-de-reactivos-ii)
 
 
 
