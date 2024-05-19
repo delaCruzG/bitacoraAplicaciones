@@ -506,98 +506,163 @@ Clase 7 21 de Marzo del 2024
 ## Semana 9. Clase 8 1 de Abril del 2024
 En esta clase nos encargamos de aplicar la teoría de sesgo y curtósis:
 
+Primero se installa moments
 
-### Primero se installa moments
+```
+install.packages("moments")
+```
 
-> install.packages("moments")
+Se activa
 
-### Se activa
+```
+library(moments)
+```
 
-> library(moments)
+Usamos este dataframe
 
-# Usamos este dataframe
+```
+data(mtcars)
+```
 
-> data(mtcars)
+Vemos el dataframe
 
-#Vemos el dataframe
+```
+View(mtcars)
+```
 
-> View(mtcars)
+Recordar:
+>3 lepto, 
+= 3 meso
+< plati
 
-#Recordar:
-#>3 lepto, 
-#= 3 meso
-#< plati
+-0.5 a 0.5 simétrica
+-1 a 1, sesgo moderado
+mayor a -1 y 1, sesgo considerable
 
-# -0.5 a 0.5 simétrica
-# -1 a 1, sesgo moderado
-# mayor a -1 y 1, sesgo considerable
+Aplicamos la función skewness a la columna mpg
 
-#Aplicamos la función skewness a la columna mpg
-
+```
 skewness(mtcars$mpg)
+```
+```
 kurtosis(mtcars$mpg)
+```
 
+```
 hist(mtcars$mpg)
+```
+```
 hist(mtcars$mpg, probability=TRUE)
+```
+```
 lines(density(mtcars$mpg))
+```
 
-#Aplicamos la función skewness a la columna wt y disp
+Aplicamos la función skewness a la columna wt y disp
 
+```
 skewness(mtcars$wt)
+```
+```
 kurtosis(mtcars$wt)
+```
 
+```
 hist(mtcars$wt)
+```
+```
 hist(mtcars$wt, probability=TRUE)
+```
+```
 lines(density(mtcars$wt))
+```
 
+```
 skewness(mtcars$disp)
+```
+```
 kurtosis(mtcars$disp)
+```
 
+```
 hist(mtcars$disp)
+```
+```
 hist(mtcars$disp, probability=TRUE)
+```
+```
 lines(density(mtcars$disp))
+```
 
-#usamos saply
+usamos saply
 
+```
 sapply(mtcars, skewness)
+```
 
-#graficamos carb por ser mayor a uno
+graficamos carb por ser mayor a uno
 
+```
 hist(mtcars$carb, probability=TRUE)
+```
 
-#vemos que para la grafica anterior hay uns sesgo a la derecha
+vemos que para la grafica anterior hay uns sesgo a la derecha
 
-# Dot plot
+Dot plot
 
+```
 stripchart(mtcars$carb, method="stack", offset=1, at=0, pch=20, col="red")
+```
 
-#Box plot
+Box plot
 
+```
 boxplot(mtcars$disp, horizontal=TRUE)
+```
+```
 stripchart(mtcars$disp, method="jitter", pch=19, add=TRUE, col="orange")
+```
 
-#TODO LO ANTERIOR FUE PARA PRACTICAR, LA ACTIVIDAD SE HACE CON LOS DATOS crime_R
+TODO LO ANTERIOR FUE PARA PRACTICAR, LA ACTIVIDAD SE HACE CON LOS DATOS crime_R
 
+```
 crime <- read.csv(file.choose())
+```
+```
 View(crime)
+```
+Se cambia eje x y y 
 
-#Se cambia eje x y y 
+```
 hist(crime$StateSize10, main="StateSize10", xlab="StateSize", ylab="Frecuencia", col="red")
-
+```
+```
 hist(crime$HighYouthUnemploy10, main="HighYouthUnemploy10", xlab="HighYouthUnemploy10", ylab="Frecuencia", col="blue")
-
+```
+```
 hist(crime$YouthUnemployment, main="YouthUnemployment", xlab="YouthUnemployment", ylab="Frecuencia", col="green")
-
+```
+```
 stripchart(crime$Males, method="stack", offset=2, at=0, pch=19, col="darkgreen")
+```
 
-# preparar para boxplot de Expenditure Year 0 y Expenditure Year 10
+preparar para boxplot de Expenditure Year 0 y Expenditure Year 10
+```
 expenditureyear0 <- crime$ExpenditureYear0
+```
+```
 expenditureyear10 <- crime$ExpenditureYear10
+```
 
+```
 expenditureyear0_norm <- rnorm(200,mean=mean(expenditureyear0, na.rm=TRUE), sd=sd(expenditureyear0, na.rm=TRUE))
+```
+```
 expenditureyear10_norm <- rnorm(200,mean=mean(expenditureyear10, na.rm=TRUE), sd=sd(expenditureyear10, na.rm=TRUE))
-
+```
+```
 boxplot(expenditureyear0, expenditureyear10, main = "comparación", at = c(1,2), names = c("expenditureyear0", "expenditureyear10"), las = 2, col = c("orange","red"), border = "brown", horizontal = TRUE)
+```
 
 #### 15 de abril #Cargar resultados crudos de una prueba de opción múltiple
 score <- read.csv("http://lang-tech.net/doc/sample.score.csv", header = TRUE, sep = ",")
