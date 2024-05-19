@@ -1202,78 +1202,88 @@ Sube tus 2 archivos a Classroom.
 ## Semana 13. Clase 10 29 de abril Análisis de Reactivos II
 
 
-Escalas de Likert y retroalimentación de experiencia
+En este ejercicio analizamos escalas de likert.
 
-Tras responder una prueba de comprensión auditiva, se les hizo una serie de preguntas a las personas:		
+Las funciones relevantes para esto fueronn:
 
-¿Qué tan familiares te resultaron los temas de las preguntas? 
-		 	 	 								
-2. ¿Qué tan interesantes te resultaron los audios?
-					
-3. ¿Que tan difíciles te parecieron los audios?	
-					
-4. ¿Qué tan bien crees que la prueba refleje tus habilidades de comprensión auditiva?
-
-Las respuestas se respondieron usando una escala de Likert del 1 al 4 donde 1 significa “nada”  y 4 significa “extremadamente” 
 
 Cargar los datos
 
-```
+```{r}
 Likdat<-read.csv(file.choose())
 ```
 
-#Revisar que se cargaron bien los datos y ver qué contiene la tabla. 
+Corroborar datos:
+
+Usando View
+
 ```
 View(Likdat)
 ```
+
+o str
+
 ```
 str(Likdat)
 ```
 
-#Quita la primer columna (id)
+Para este ejercicio quitamos la primer columna (id)
 
-```
+```{r}
 Likdat_sub<-Likdat[,c(-1)]
 ```
 
-#Análisis de respuestas
-```
+#### Análisis de respuestas
+
+Usamos el paquete CTT
+
+```{r}
 library(CTT)
 ```
-```
+Con este paquete es posible usar la función itemAnalysis, se usará como a continuación:
+
+```{r}
 ItanL   <- itemAnalysis(Likdat_sub)
 ```
-```
+
+Vemos el resultado
+
+```{r}
 ItanL
 ```
 
-Recuerda: si quieres un análisis más completo necesitas usar str()
+Para un análisis más completo usamos usar str()
+
 ```
 str(ItanL)
 ```
 
-#Vamos a ver sólo la parte de item report
+Visualizamos itemReport
 
 ```
 ItanL$itemReport
 ```
 
-Aunque nos da información útil, sirve también ver la frecuencia de cada respuesta para cada pregunta. 
+Ahora instalamos el paquete questionr para usar sus funciones
 
 ```
 install.packages("questionr")
 ```
+
+Activamos 
+
 ```{r}
 library(questionr)
 ```
 
-Ver la frecuencia de respuestas en una pregunta
+Ver la frecuencia de respuestas en una pregunta con esta función:
 
 ```
 questionr::freq(Likdat$q1)
 ```
 
 Para sacar las frecuencias de las 4 preguntas al mismo tiempo usa una de las siguientes funciones:
+
 Opción 1
 
 ```
@@ -1290,28 +1300,30 @@ Vamos a graficar la frecuencia de la pregunta 1
 barplot(table(Likdat$q1))
 ```
 
-Repite con las otras 3 preguntas. 
-Mejora la apariencia de las gráficas y pégalas en un documento. 
+#### Cómo analizar reactivos politómicos
 
-Cómo analizar reactivos politómicos
 Por ejemplo, si al evaluar un ensayo hay 4 rubros o aspectos. 
 
 ```
 polydat<-read.csv(file.choose())
 ```
+
 ```
 View(polydat)
 ```
 
-Hacemos una variable que nos combine todos los puntajes de cada rubro
+Se asignan a una variable la concatenación de los resultados.
+
 ```
 polys   <- c("poly1", "poly2", "poly3", "poly4")
 ```
 
 Analizamos los rubros
+
 ```
 itanp   <- itemAnalysis(polydat[,polys])
 ```
+
 ```
 str(itanp)
 ```
@@ -1322,6 +1334,8 @@ itanp$itemReport
 ```
 
 Aunque podemos ver el promedio para cada uno de los rubros, queremos ver la dificultad también. 
+
+Para eso usamos:
 
 ```{r}
 PolyAnReport   <- itanp$itemReport
