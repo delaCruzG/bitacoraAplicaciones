@@ -2,6 +2,36 @@
 
 ###  Héctor García de la Cruz
 
+Este documento corresponde a la bitacora del curso de aplicaciones estadísticas impartido por la profesora Dunia Rassy.
+
+La organización del contenido es como se presenta a continuación:
+
+[Semana 1. Clase 1: 2 de Febrero del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024))
+
+[Semana 2. Clase 2: 9 de Febrero del 2024](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024))
+
+[Semana 3. Clase 3: 16 de Febrero](https://github.com/delaCruzG/bitacoraAplicaciones?tab=readme-ov-file#semana-1-clase-1-2-de-febrero-del-2024)
+
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+[Semana 1. Clase 1: 2 de Febrero del 2024](Semana 1. Clase 1: 2 de Febrero del 2024)
+
+
+
+
 ## Semana 1. Clase 1: 2 de Febrero del 2024
 
 En esta clase instalamos R y R estudio. 
