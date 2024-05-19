@@ -522,6 +522,7 @@ sapplu(banana, class)
 ```
 sapply(banana, class)
 ```
+```
 print(banana$Gender)
 ````
 
