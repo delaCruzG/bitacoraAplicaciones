@@ -280,34 +280,50 @@ abline(lm( total_ex1~total_ex2),col="red")
 
 ## Semana 5. Clase 4. 26 de Febrero: Medidas de tendencia central e histogramas en R.
 
-//Pendiente de explicación:
+En esta clase se calcularon distintas medidas de tendencia central y se exploraron funciones para hacer gráficas . 
+
+Empezamos asignando a una variable el dataframe que corresponde a un documento csv.
 
 ```
 banana<-read.csv(file.choose(), header=TRUE)
 ```
+Corroboramos su contenido.
+
 ```
 View(banana)
 ```
+
 ```
 clear()
 ```
+
+Usamos sapply para aplicar la función class a las diferentes columnas.
+
 ```
 sapply(banana, class)
 ```
-sumar valores de la tabla
+
+Sumamos valores de una columna en especifico de la tabla
+
 ```
 sum(banana$Age)
 ```
-Dividirlos entre el número de datos (length
+
+Dividirlos entre el número de datos usando la función length
+
 ```
 length(banana$Age)
 ```
+Asignamos a variables
+
 ```
 valoresTabla <-sum(banana$Age)
 ```
 ```
 numeroDatos <- length(banana$Age)
 ```
+Una operacion aritmetica para obtener la media aritmética.
+
 ```
 valoresTabla/numeroDatos
 ```
@@ -317,24 +333,35 @@ valoresTabla <-sum(banana$Age)
 ```
 numeroDatos <- length(banana$Age)
 ```
+
 ```
 valoresTabla/numeroDatos
 ```
+Tambien podemos usar directamente una función.
+
 ```
 mean(banana$Age)
 ```
+Asignación a variable de la media calculada manualmente
+
 ```
 promedioManual <- valoresTabla/numeroDatos
 ```
+Asignación a variable de la media calculada con una función de r
+
 ```
 primedioFuncion <- mean(banana$Age)
 ```
+Asignación a varible de concatenación de valores.
+
 ```
 fPilotos <- c(4, 11, 12, 21, 30, 12, 9, 1)
 ```
 ```
 vPilotos <- c(97, 94, 92, 91, 90, 89, 78, 60)
 ```
+Lbtenemos la media ponderada con las siguientes funciones.
+
 ```
 wighted.mean(vPilotos, fPilotos)
 ```
@@ -342,22 +369,21 @@ wighted.mean(vPilotos, fPilotos)
 weighted.mean(vPilotos, fPilotos)
 ```
 Ordenar de mayor a menor
+
 ```
 sort(vPilotos)
 ```
 
-Sacarle la longitud
+Sacarle la longitud y mediana 
 ```
 length(vPilotos)
 ```
 ```
 median(vPilotos)
 ```
-```
-median(vPilotos)
-```
 
 Respuesta para la tercera columna
+
 ```
 median(banana$Age)
 ```
@@ -368,19 +394,24 @@ Prueba sólo para ver qué sale
 mode(banana$Age)
 ```
 
+El output correpsonde a el tipo de dato en R.
+
 convertimos a factor los resultados y summary los suma
 ```
 summary(as.factor(banana$Age))
 ```
+
 ```
 source("~/.active-rstudio-document")
 ```
+Instalanos el paquete modeest y lo activamos.
+
 ```
 install.packages("modeest")
-```
-```
 library(modeest)
 ```
+Así podemos usar la funcion mfv para calcular moda.
+
 ```
 moda<-mfv(banana$Age)
 ```
@@ -397,96 +428,49 @@ moda <- mfv(banana$Age)
 summary(banana)
 ```
 
-Histograma
+Ahora graficamos histogramas para las edades registradas.
+
 ```
 hist(banana$Age)
 ```
 Histograma
+
+Modificamos el parametro color.
+
 ```
 hist(banana$Age, color="pink")
 ```
-Histograma
-```
-hist(banana$Age")
-```
-Histograma
+
+Modificamos los parametros main, xlab y ylab.
 ```
 hist(banana$Age", main="Histograma", xlab="Edad", ylab="Frecuencia")
-```
-Histograma
-```
-hist(banana$Age, main="Histograma", xlab="Edad", ylab="Frecuencia")
-```
-Marcar linea de tendencia
+
+Marcamos una  linea de tendencia usando abline 
+
 ```
 abline(v=mean(banana$Age))
 ```
 
 Marcar linea de tendencia pero vertical
+
+Modificamos el parámetro lwd.
+
 ```
 abline(v=mean(banana$Age), col="pink", lwd=5)
 ```
 
-Marcar linea de tendencia pero vertical
-```
-abline(v=mean(banana$Age), col="darkred", lwd=5)
-```
-Grafica histograma
+Grafica histograma con modificación en todos los parámetros vistos hasta este momento.
 ```
 hist(banana$Age, main="Histograma", xlab="Edad", ylab="Frecuencia", col="green"")
 ```
-
-Grafica histograma
-```
-hist(banana$Age, main="Histograma", xlab="Edad", ylab="Frecuencia", col="green")
-```
-Grafica histograma
-```
-hist(banana$Age, main="Histograma", xlab="Edad", ylab="Frecuencia")
-```
-Marcar linea de tendencia pero vertical. Se cambian parametros col
-```
-abline(v=mean(banana$Age), col="darkred", lwd=5)
-```
-
-Marcar linea de tendencia pero vertical. Se cambian parametros col
-```
-abline(v=mean(banana$Age), col="darkred", lwd=5)
 ```
 Marcar linea de tendencia pero vertical. Se cambian parametros col
 ```
 abline(v=median(banana$Age), col="pink", lwd=5)
 ```
-```
-summary(banana)
-```
-```
-sapply(banana, class)
-```
-```
-producto <- mfv(banana)
-```
-```
-producto <- mfv(banana$Product)
-```
-```
-producto
-```
-```
-mean(banana$Age)
-```
-```
-median(banana$Age)
-```
-```
-mvf(banana$Age)
-```
-```
-mfv(banana$Age)
-```
-```
-mfv(banana$Gender)
-```
+
+Ejemplos varios de funciones vistos hasta ahora.
+
 ```
 mean(banana$Education)
 ```
