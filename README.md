@@ -689,7 +689,7 @@ Activamos el paquete modeeest.
 library(modeest)
 ```
 
-Usanos la funcion para calcular moda.
+Usamos la funcion para calcular moda.
 
 ```
 mfv(leuk$time)
