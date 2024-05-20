@@ -564,44 +564,55 @@ print(banana$Gender)
 
 ## Semana 6. Clase 5. 4 de Marzo: Medidas de Dispersión. Medidas de dispersión en R.
 
+Instalamos el paquete MASS.
 
-```
-data("Pima.te")
-```
-
-Warning message:
-In data("Pima.te") : data set ‘Pima.te’ not found
 ```
 library(MASS)
 ```
+
+Cargamos los datos pima.te.
+
 ```
 data("Pima.te")
 ```
 ```
-#Vemos el número de datos
+
+Vemos el número de datos
 ```
+Filas
 ```
 nrow(Pima.te)
 ```
+Vista global
+
 ```
 View(Pima.te)
 ```
+Usamos summary para la columna glu.
 ```
 summary(Pima.te$glu)
 ```
+Asignamos el rango calculado manualmente.
+
 ```
 var <- 197-65
 ```
+Lo obtenemos con una función.
 
 ```
 range(Pima.te$glu)
 ```
+Calculamos el rango intercuartil usando una función.
+
 ```
 IQR(Pima.te$glu)
 ```
+Obtenemos la varianza  de glu.
+
 ```
  var(Pima.te$glu)
 ```
+Obtenemos el cuadrado de la varianza previa.
 ```
 sqrt(var(Pima.te$glu))
 ```
@@ -611,125 +622,72 @@ sqrt(var(Pima.te$glu))
 ```
 sqrt(var(Pima.te$glu))
 ```
-```
-var(Pima.te$glu)
-```
-```
-sqrt(var(Pima.te$glu))
-```
+Calculamos la desviación estándar 
+
 ```
 sd(Pima.te$glu)
 ```
+Usamos sapply para calcularla para todas las columnas.
 ```
 sapply(Pima.te, sd)
 ```
-Error in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm = na.rm) : 
-  Calling var(x) on a factor x is defunct.
-  Use something like 'all(duplicated(x)[-1L])' to test for a constant vector.
-> sapply(Pima.te, class)
-    npreg       glu        bp      skin       bmi       ped       age      type 
-"integer" "integer" "integer" "integer" "numeric" "numeric" "integer"  "factor" 
-> sapply(Pima.te[c('npreg', 'glu', 'age')], sd)
-    npreg       glu       age 
- 3.283634 30.501138 10.636225 
-> #promedios
-> sapply(Pima.te[c('npreg', 'glu', 'age')], sd)
-    npreg       glu       age 
- 3.283634 30.501138 10.636225 
-> #promedios
-> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
-    npreg       glu       age 
-  3.48494 119.25904  31.31627 
-> #promedios
-> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
-    npreg       glu       age 
-  3.48494 119.25904  31.31627 
-> #promedios
-> sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
-    npreg       glu       age 
-  3.48494 119.25904  31.31627 
-> hist(Pima.te$glu)
-> abline(v=mean(Pima.te$glue), col="salmon", lwd=5)
-Warning message:
-In mean.default(Pima.te$glue) :
-  argument is not numeric or logical: returning NA
+Esto nos regresa un error 
+Verificamos la clase de nuestros datos
+```
+sapply(Pima.te, class)
+```
+Encontramos valores tipos de datos que no son conoatibles con sd.
+Por lo que restringimos el argumento a una concatenación valida.
+```
+sapply(Pima.te[c('npreg', 'glu', 'age')], sd)
+```
+
+Obtenemos promedios con la misma restricción de argumento .
+```
+sapply(Pima.te[c('npreg', 'glu', 'age')], mean)
+```
+
+Graficamos un histograma y su linea de tendencia,
+
+```
+hist(Pima.te$glu)
+abline(v=mean(Pima.te$glue), col="salmon", lwd=5)
+```
+
+Ahora trabajamos con leuk.
 ```
 data(leuk)
 ```
 ```
 force(leuk)
 ```
-      wbc      ag time
-1    2300 present   65
-2     750 present  156
-3    4300 present  100
-4    2600 present  134
-5    6000 present   16
-6   10500 present  108
-7   10000 present  121
-8   17000 present    4
-9    5400 present   39
-10   7000 present  143
-11   9400 present   56
-12  32000 present   26
-13  35000 present   22
-14 100000 present    1
-15 100000 present    1
-16  52000 present    5
-17 100000 present   65
-18   4400  absent   56
-19   3000  absent   65
-20   4000  absent   17
-21   1500  absent    7
-22   9000  absent   16
-23   5300  absent   22
-24  10000  absent    3
-25  19000  absent    4
-26  27000  absent    2
-27  28000  absent    3
-28  31000  absent    8
-29  26000  absent    4
-30  21000  absent    3
-31  79000  absent   30
-32 100000  absent    4
-33 100000  absent   43
 ```
 View(leuk)
 ```
 ```
 nrows(leuk)
 ```
-Error in nrows(leuk) : could not find function "nrows"
 ```
 nrow(leuk)
 ```
-
 ```
 summary(leuk$time)
 ```
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   1.00    4.00   22.00   40.88   65.00  156.00 
 ```
 mvf(leuk$time)
 ```
-
-Error in mvf(leuk$time) : could not find function "mvf"
 ```
 summary(leuk$time)
 ```
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   1.00    4.00   22.00   40.88   65.00  156.00 
-```
-mvf(leuk$time)
-```
-Error in mvf(leuk$time) : could not find function "mvf"
+
+Activamos el paquete modeeest.
+
 ```
 library(modeest)
 ```
-```
-mvf(leuk$time)
-```
-Error in mvf(leuk$time) : could not find function "mvf"
+
+Usanos la funcion para calcular moda.
+
 ```
 mfv(leuk$time)
 ```
@@ -743,11 +701,10 @@ range(leuk$time)
 var1 <- 197-65
 ```
 ```
-> IQR(leuk$time)
+IQR(leuk$time)
 ```
-[1] 61
 ```
-> range(leuk$wbc)
+range(leuk$wbc)
 ```
 
 ```
@@ -775,81 +732,94 @@ table(leuk$ag)
 ```
 
 
- absent present 
-     16      17
-
-
-
 ## Semana 7. Clase 6. 11 de Marzo: Distribución de frecuencias en R.
 
-> library(MASS)      # load the MASS package 
-> painters 
+Notas obtenidas de presentación.
 
-Vamos a sacar la frecuencia de la última columna, escuelas
-Intenten:
+Activamos MASS y visualizamos painters.
 
-> frequency(painters$School)
+```
+library(MASS)   
+painters 
+```
 
-Ahora:
-> table(painters$School)
+Calculamos frecuencia con
 
-> cumsum(table(painters$School))
- A  B  C  D  E  F  G  H 
-10 16 22 32 39 43 50 54 
+```
+table(painters$School)
+```
+La frecuencia acumulada la obtenemos con cumsum.
+
+```
+cumsum(table(painters$School))
+```
+
 
 Para convertirlo en una “Tabla”
->cbind(cumsum(table(painters$School)))
 
->table(painters$School) /nrow(painters)
->table(painters$School) /length(painters$School)
+```
+cbind(cumsum(table(painters$School)))
+table(painters$School) /nrow(painters)
+table(painters$School) /length(painters$School)
+```
 
-Pueden guardar el resultado en una variable para que sea más fácil “llamarlo”
+Asignamos resultados a una variable.
 
 freqr<- table(painters$School) / length(painters$School)
 
-Para corroborar que suman 1 todas las frecuencias:
-> sum(freqr)
+Corroboramos resultado.
+
+```
+sum(freqr)
+```
 
 Para transformar en porcentaje:
- freqpct<-table(painters$School)/nrow(painters) *100
-> freqpct
-Si queremos redondear a sólo 2 decimales, podemos usar
->round(freqpct,2)
-Para checar que sumen 100%, usamos:
->sum(freqpct)
+```
+freqpct<-table(painters$School)/nrow(painters) *100
+freqpct
+```
+Redondeamos con 
+
+```
+round(freqpct,2)
+```
+
+Verificamos que sumen 100%
+```
+sum(freqpct)
+```
 
 Crear una tabla con frecuencia absoluta, relativa y acumulada
-> xout <- as.data.frame(table(painters$School))
-> xout <- transform(xout, cumFreq = cumsum(Freq), relative = prop.table(Freq))
-> xout
 
-Crear manualmente intervalos
-> breaks=seq(1,50,by=10)
-> breaks
-[1]  1 11 21 31 41
-> breaks=seq(0,50, by=10)
-> breaks
-[1]  0 10 20 30 40 50
+```
+xout <- as.data.frame(table(painters$School))
+xout <- transform(xout, cumFreq = cumsum(Freq), relative = prop.table(Freq))
+xout
+```
 
-> clasif=cut(ch6ds1$Reading,breaks,right=FALSE)
-> freq.int<-table(clasif)
-> freq.int
+Ejemplo de  creación manualmente de intervalos
+
+```
+breaks=seq(0,50, by=10)
+breaks
+```
+Usamos la defincion anterior en la función cut.
+
+```
+clasif=cut(ch6ds1$Reading,breaks,right=FALSE)
+freq.int<-table(clasif)
+freq.int
 clasif
- [0,10) [10,20) [20,30) [30,40) [40,50) 
-      3      12      20      12       3 
-> cbind(freq.int)
+cbind(freq.int)
         freq.int
-[0,10)         3
-[10,20)       12
-[20,30)       20
+```
 
-
-
-
+Ahora graficamos con hist()
+```
 hist(ch6ds1$Reading,xlab="Scores",main="Reading",col="deeppink",breaks=7)
 hist(ch6ds1$Reading, probability = TRUE)
 lines(density(ch6ds1$Reading))
-
+```
  
 ## Semana 9. Clase 9. 1 de Abril: Histogramas, gráficos de caja y dotplots en R.
 
