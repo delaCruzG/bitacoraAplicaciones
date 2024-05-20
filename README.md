@@ -231,7 +231,7 @@ sapply(<varDF>, <función_a_repetir>)
 ## Semana 3. Clase 3. 16 de Febrero: Correlaciones y Gráficas en R.
 
 
-//Aún pendiente de detalles:
+Exploramos la asignación de una suma de filas a una variable.
 
 ```
 total_ex1 <- rowSums(examen1)
@@ -245,13 +245,13 @@ total_ex2 <- rowSums(examen2)
 cor(total_ex1,total_ex2)
 ```
 
-Vamos a hacer una gráfica de dispersión
+Se hizo grafica de dispersion.
 
 ```
 plot(total_ex1,total_ex2)
 ```
  
-Vamos a hermosear la gráfica para que se vea mejor. 
+Ahora jugamos con los parametros de la funcion plot.
 
 Cambiar la escala de los ejes: 
 ```
@@ -433,6 +433,7 @@ Ahora graficamos histogramas para las edades registradas.
 ```
 hist(banana$Age)
 ```
+
 Histograma
 
 Modificamos el parametro color.
@@ -444,9 +445,9 @@ hist(banana$Age, color="pink")
 Modificamos los parametros main, xlab y ylab.
 ```
 hist(banana$Age", main="Histograma", xlab="Edad", ylab="Frecuencia")
+```
 
 Marcamos una  linea de tendencia usando abline 
-
 ```
 abline(v=mean(banana$Age))
 ```
@@ -460,11 +461,13 @@ abline(v=mean(banana$Age), col="pink", lwd=5)
 ```
 
 Grafica histograma con modificación en todos los parámetros vistos hasta este momento.
+
 ```
 hist(banana$Age, main="Histograma", xlab="Edad", ylab="Frecuencia", col="green"")
 ```
-```
+
 Marcar linea de tendencia pero vertical. Se cambian parametros col
+
 ```
 abline(v=median(banana$Age), col="pink", lwd=5)
 ```
